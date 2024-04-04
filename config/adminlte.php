@@ -296,6 +296,12 @@ return [
     'menu' => [
         // Navbar items:
         [
+            'text' => 'Home',
+            'url' => 'home',
+            'icon' => 'far fa-fw fa-file',
+        ],
+
+        [
             'type' => 'navbar-search',
             'text' => 'search',
             'topnav_right' => true,
