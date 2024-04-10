@@ -36,5 +36,9 @@ class CategoriaSeeder extends Seeder
         DB::table('categorias')->insert([
             'nome' => 'Peixes',
         ]);
+
+        DB::table('categorias')->insert([
+            'nome' => 'Lanches',
+        ]);
     }
 }
