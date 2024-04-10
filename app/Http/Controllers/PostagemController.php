@@ -9,7 +9,6 @@ use App\Models\Categoria;
 class PostagemController extends Controller
 {
 
-    
     public function index()
     {
         $postagens = Postagem::orderBy('titulo', 'ASC')->get();

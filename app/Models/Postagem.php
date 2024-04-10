@@ -17,18 +17,19 @@ class Postagem extends Model
         return $this->hasOne(Categoria::class, 'id', 'categoria_id');
     }
 
+
     public function user(): HasOne
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
 
-    public function comentarios(): HasMany
-    {
-        return $this->hasMany(Comentario::class, 'postagem_id', 'id');
-    }
+//    public function comentarios(): HasMany
+//    {
+//        return $this->hasMany(Comentario::class, 'postagem_id', 'id');
+//    }
 
-    public function curtidas(): HasMany
-    {
-        return $this->hasMany(Curtida::class, 'postagem_id', 'id');
-    }
+//   public function curtidas(): HasMany
+//    {
+//        return $this->hasMany(Curtida::class, 'postagem_id', 'id');
+//    }
 }
