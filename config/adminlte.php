@@ -308,6 +308,12 @@ return [
         ],
 
         [
+            'text' => 'Postagem',
+            'url' => 'postagem',
+            'icon' => 'far fa-fw fa-file',
+        ],
+
+        [
             'type' => 'navbar-search',
             'text' => 'search',
             'topnav_right' => true,
