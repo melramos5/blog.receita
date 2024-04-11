@@ -12,6 +12,7 @@
                     <strong>Categoria:</strong>          {{ $postagem->Categoria->nome }}<br>
                     <strong>Título:</strong>          {{ $postagem->titulo }}<br>
                     <strong>Autor:</strong>          {{ $postagem->user->name }}<br>
+                    <strong>Imagem:</strong>         {{ url('../img/chocolate.jpeg')}}
                     <strong>Conteúdo:</strong>
                         <br>
                             {!! $postagem->conteudo !!}

@@ -41,10 +41,13 @@
                   <label for="fname">Título:</label><br>
                   <input type="text"  class="form-control" name="titulo"><br><br>
 
-                  <label for="fname">Conteúdo:</label><br>
-                  <textarea id="inp_editor1" class="form-control" name="conteudo" >
+                  <label for="fname">Resumo da Receita:</label><br>
+                  <input type="text"  class="form-control" name="titulo" placeholder="Faça um resumo de sua receita:" ><br><br>
 
-                   </textarea>
+                  <label for="fname">Conteúdo:</label><br>
+                  <textarea id="inp_editor1" class="form-control" name="conteudo"  >
+
+                    </textarea>
 
                   <input type="submit"  class="form-control" value="ENVIAR">
 
