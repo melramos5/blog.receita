@@ -13,19 +13,6 @@ class PostagemSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('postagens')->insert([
-            'titulo' => 'Bolo de chocolate',
-            'conteudo' => 'receita do bolo de chocolate',
-            'user_id' => 1,
-            'categoria_id' => 1,
-        ]);
-
-        DB::table('postagens')->insert([
-            'titulo' => 'Guerra da Ucrânia',
-            'conteudo' => 'O acontecimento mais triste de 2022',
-            'user_id' => 1,
-            'categoria_id' => 2,
-        ]);
-
+        //
     }
 }

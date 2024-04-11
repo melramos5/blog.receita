@@ -42,10 +42,10 @@
                   <input type="text"  class="form-control" name="titulo"><br><br>
 
                   <label for="fname">Resumo da Receita:</label><br>
-                  <input type="text"  class="form-control" name="titulo" placeholder="Faça um resumo de sua receita:" ><br><br>
+                  <input type="text"  class="form-control" name="resumo" placeholder="Faça um resumo de sua receita:" ><br><br>
 
                   <label for="fname">Conteúdo:</label><br>
-                  <textarea id="inp_editor1" class="form-control" name="conteudo"  >
+                    <textarea id="inp_editor1" class="form-control" name="conteudo"  >
 
                     </textarea>
 
@@ -64,3 +64,5 @@
     </div>
 </div>
 @endsection
+
+
