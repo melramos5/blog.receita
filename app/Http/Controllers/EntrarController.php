@@ -1,9 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+class EntrarController extends Controller
+{
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('login.entrar');
+    }
+}
 
 class LoginController extends Controller
 {
@@ -25,7 +39,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/adm';
+    protected $redirectTo = '/inicio';
 
     /**
      * Create a new controller instance.

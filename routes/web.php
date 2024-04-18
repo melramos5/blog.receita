@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PostagemController;
+use App\Http\Controllers\AdmController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EntrarController;
+use App\Http\Controllers\CadastroController;
 
 
 /*
@@ -22,8 +26,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/adm', [App\Http\Controllers\AdmController ::class, 'index'])->name('adm');
 
+Route::get('/inicio', [App\Http\Controllers\InicioController ::class, 'index'])->name('inicio');
+
+Route::get('/massa', [App\Http\Controllers\MassaController ::class, 'index'])->name('massa');
+
+Route::get('/entrar', [App\Http\Controllers\EntrarController ::class, 'index'])->name('entrar');
+
+Route::get('/cadastro', [App\Http\Controllers\CadastroController ::class, 'index'])->name('cadastro');
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
 
