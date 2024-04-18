@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="pt-br">
 
 <head>
@@ -46,9 +47,9 @@
                 Mais
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Petiscos</a></li>
-                <li><a class="dropdown-item" href="#">Vegetariano</a></li>
-                <li><a class="dropdown-item" href="#">Sem Glútem</a></li>
+                <li><a class="dropdown-item" href="#">petiscos</a></li>
+                <li><a class="dropdown-item" href="#">vegetariano</a></li>
+                <li><a class="dropdown-item" href="#">sem glútem</a></li>
               </ul>
             </li>
           </ul>

@@ -60,7 +60,7 @@
           <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
           <i class="bi bi-search btn btn-danger me-2" style="border-radius: 20px;"></i>
         </form>
-          <a href="entrar" class="btn btn-danger me-2" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
+          <a href="entrar" class="btn btn-danger me-3" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
       </div>
     </nav>
 
