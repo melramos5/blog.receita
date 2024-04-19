@@ -20,11 +20,17 @@ use App\Http\Controllers\CadastroController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+   // return view('welcome');
+//});
 
 Auth::routes();
+
+Route::get('/', [App\Http\Controllers\SiteController ::class, 'index'])->name('site.index');
+
+Route::get('/site/categoria/{id}', [App\Http\Controllers\SiteController ::class, 'categoria'])->name('site.categoria');
+
+
 
 Route::get('/adm', [App\Http\Controllers\AdmController ::class, 'index'])->name('adm');
 
@@ -35,6 +41,7 @@ Route::get('/massa', [App\Http\Controllers\MassaController ::class, 'index'])->n
 Route::get('/entrar', [App\Http\Controllers\EntrarController ::class, 'index'])->name('entrar');
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController ::class, 'index'])->name('cadastro');
+
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
 
