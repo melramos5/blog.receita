@@ -10,7 +10,7 @@
  .login{
   background-color: whitesmoke;
     border-width: 30px;
-    margin: 30px auto; 
+    margin: 30px auto;
     padding: 60px;
     width:600px;
     height:600px;
@@ -32,23 +32,23 @@
   .recuperar {
     background-color: whitesmoke;
     border-width: 30px;
-    margin: 30px auto; 
+    margin: 30px auto;
     padding: 60px;
     width:500px;
     height:600px;
     border:2px solid #eaad62;
   }
 
- 
+
 .cad {
   background-color: whitesmoke;
   border-width: 30px;
-  margin: 30px auto; 
+  margin: 30px auto;
   padding: 60px;
   width:650px;
   height:750px;
   border:2px solid #eaad62;
-} 
+}
 
 .h3 {
   color:#f4a944;
@@ -57,19 +57,27 @@
 .senha {
   background-color: whitesmoke;
   border-width: 30px;
-  margin: 30px auto; 
+  margin: 30px auto;
   padding: 60px;
   width:600px;
   height:600px;
   border:2px solid #eaad62;
-} 
+}
 
 .codigo {
   background-color: whitesmoke;
   border-width: 30px;
-  margin: 30px auto; 
+  margin: 30px auto;
   padding: 60px;
   width:500px;
   height:600px;
   border:2px solid #eaad62;
 }
+
+.perfil{
+      border-width: 30px;
+      margin: 30px auto;
+      padding: 60px;
+      width:600px;
+      height:600px;
+  }
