@@ -1,80 +1,104 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-br">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../Css/css/massas.css" />
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <title>MELANE massa</title>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div id="fundo">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+    <!-------------------------------- NAVBAR --------------------------------->
 
-                    </ul>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="inicio">
+          <img src="../Css/img/logo.png" alt="" width="170" height="70">
+      </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+            @foreach ( $categorias as $value)
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+            <li class="nav-item">
+                <a class="nav-link active fw-bolder text-danger" href="{{ url ('site/categoria/' . $value->id) }}">{{ $value->nome }}</a>
+              </li>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+            @endforeach
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
-        <main class="py-4">
+            </li>
+          </ul>
+        </div>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
+          <i class="bi bi-search btn btn-danger me-2" style="border-radius: 20px;"></i>
+        </form>
+          <a href="entrar" class="btn btn-danger me-2" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
+      </div>
+    </nav>
+
+    <br><br>
+
+        <div class="container">
             @yield('content')
-        </main>
+        </div>
+
+        <br> <br>
+        <footer class="rodape">
+            <div class="container">
+                <div class="row p-4">
+                  <div class="col-md-3 mt-3">
+                    <a class="navbar-brand" href="inicio">
+                      <img src="../Css/img/logo.png" alt="" width="170" height="70">
+                    </a>
+                    <p></p>
+                  </div>
+                  <div class="col-md-3 mt-4">
+                    <h4 class="fs-6">quem somos</h4>
+                    <h4 class="fs-6">privacidade</h4>
+                    <h4 class="fs-6">termos de uso</h4>
+                  </div>
+
+
+                  <div class="col-md-4 mt-3">
+                    <h3 class="fs-6 ms-3">REDES SOCIAIS</h3>
+                    <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link text-primary fs-3" aria-current="page" href="#"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-info fs-3" href="#"><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-danger fs-3" href="#"><i class="bi bi-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success fs-3" href="#"><i class="bi bi-whatsapp"></i></a>
+                          </li>
+                      </ul>
+                  </div>
+
+                </div>
+              </div>
+        </footer>
     </div>
-</body>
-</html>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+        </script>
+
+    </body>
+    </html>
