@@ -29,7 +29,7 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($categorias as $value)
+                        @foreach ($categorias as $value)
                             <tr>
                             <th scope="row">{{ $value->id }}</th>
                             <td>{{ $value->nome }}</td>
