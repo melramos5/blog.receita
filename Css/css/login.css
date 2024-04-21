@@ -75,9 +75,11 @@
 }
 
 .perfil{
-      border-width: 30px;
-      margin: 30px auto;
-      padding: 60px;
-      width:600px;
-      height:600px;
+    text-align: center;
+    
+    border-width: 30px;
+    margin: 30px auto;
+    padding: 60px;
+    width:700px;
+    height:600px;
   }
