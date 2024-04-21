@@ -1,5 +1,11 @@
-.foto, h2 {
+.foto{
     text-align: center;
+    border-width: 30px;
+    margin: 30px auto;
+    padding: 60px;
+    width:900px;
+    height:600px;
+
 }
 .ingrediente {
     background-color: #faead5;
@@ -9,13 +15,12 @@
     width:500px;
     height:300px;
 }
-
-.navbar{
+.navbar, .rodape{
     background-color: #faead5;
-
 }
-
-.rodape{
-    background-color: #faead5;
-    
+h2 {
+    text-align: center;
+}
+.pub {
+    float: left;
 }
