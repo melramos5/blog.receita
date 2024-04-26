@@ -1,3 +1,8 @@
 .navbar, .rodape {
     background-color: #faead5;
     }
+
+    .img-fluid {
+        width: 300px;
+        height: 100px;
+    }
