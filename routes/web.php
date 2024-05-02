@@ -32,6 +32,7 @@ Route::get('/site/categoria/{id}', [App\Http\Controllers\SiteController ::class,
 
 
 
+
 Route::get('/adm', [App\Http\Controllers\AdmController ::class, 'index'])->name('adm');
 
 Route::get('/inicio', [App\Http\Controllers\InicioController ::class, 'index'])->name('inicio');
