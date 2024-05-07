@@ -8,7 +8,7 @@
 
 }
 .ingrediente {
-    background-color: whitesmoke;
+    background-color:#efab52;
     border-width: 20px;
     margin: 20px auto;
     padding: 10px;
@@ -16,7 +16,6 @@
     height:300px;
 }
 .preparo{
-    
       border-width: 30px;
       margin: 30px auto;
       padding: 60px;
@@ -35,5 +34,10 @@ h2 {
 .pub {
     float: right;
     width: 400px;
-    height: 20opx;;
+    height: 200px;
+}
+.comentario {
+   padding-left: 150px;
+   width: 600px;
+   height: 150px;
 }
