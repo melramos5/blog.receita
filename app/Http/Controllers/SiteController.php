@@ -17,8 +17,8 @@ class SiteController extends Controller
 
     public function categoria($id)
     {
-        $categoria = Categoria::find($id);
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::where('categoria_id', $id)->get();
-        return view('site.index', ['categoria' => $categoria,'receitas' => $receitas]);
+        return view('site.index', ['categorias' => $categorias,'receitas' => $receitas]);
     }
 }
