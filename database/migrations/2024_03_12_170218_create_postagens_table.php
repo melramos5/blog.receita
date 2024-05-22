@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             //$tabla->text('resumo');
+            $table->longText('imagem');
             $table->text('conteudo');
             $table->bigInteger('user_id');
             $table->bigInteger('categoria_id');

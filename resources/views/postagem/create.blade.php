@@ -23,7 +23,7 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ url('/postagem/create') }}">
+                <form method="POST" action="{{ url('/postagem/create') }}" enctype="multipart/form-data">
                     @csrf
 
                     <label for="fname">Categoria:</label><br>
@@ -39,11 +39,11 @@
 
 
                   <label for="fname">Título:</label><br>
-                  <input type="text"  class="form-control" name="titulo"><br><br>
-            <!--
-                <label for="fname">Resumo da Receita:</label><br>
-                  <input type="text"  class="form-control" name="resumo" placeholder="Faça um resumo de sua receita:" ><br><br>
-            -->
+                  <input type="text"  class="form-control" name="titulo"><br>
+
+                  <label for="fname">Imagem:</label><br><br>
+                  <input type="file"  class="form-control" name="imagem"><br>
+
                   <label for="fname">Conteúdo:</label><br>
                     <textarea id="inp_editor1" class="form-control" name="conteudo"  >
 

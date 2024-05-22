@@ -25,7 +25,7 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ url('/postagem/' . $postagem->id . '/edit') }}">
+                <form method="POST" action="{{ url('/postagem/' . $postagem->id . '/edit') }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -46,6 +46,13 @@
 
                   <label for="fname">Título:</label><br>
                   <input type="text"  class="form-control" value="{{ $postagem->titulo }}" name="titulo"><br><br>
+
+
+                  <label for="fname">Imagem:</label><br>
+                  <input type="file"  class="form-control" name="imagem"><br><br>
+
+                  <img src="data:image/png;base64,{{ $postagem->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"><br><br>
+
 
                   <label for="fname">Conteúdo:</label><br>
                   <textarea id="inp_editor1" class="form-control" name="conteudo" >

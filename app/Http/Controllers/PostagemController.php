@@ -38,8 +38,13 @@ class PostagemController extends Controller
             'conteudo' => 'required|min:5',
         ], $messages);
 
+
+        $imagem = $request->file('imagem');
+
+
         $postagem = new Postagem;
         $postagem->titulo = $request->titulo;
+        $postagem->imagem = base64_encode (file_get_contents ($imagem));
         $postagem->conteudo = $request->conteudo;
         $postagem->user_id = $user_id;
         $postagem->categoria_id = $request->categoria_id;
@@ -81,8 +86,11 @@ class PostagemController extends Controller
             'conteudo' => 'required|min:5',
         ], $messages);
 
+        $imagem = $request->file('imagem');
+
         $postagem = Postagem::find($id);
         $postagem->titulo = $request->titulo;
+        $postagem->imagem = base64_encode (file_get_contents ($imagem));
         $postagem->conteudo = $request->conteudo;
         $postagem->user_id = $user_id;
         $postagem->categoria_id = $request->categoria_id;

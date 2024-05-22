@@ -22,9 +22,8 @@
 
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="inicio">
-          <img src="../Css/img/logo.png" alt="" width="170" height="70">
-      </a>
+        <a class="navbar-brand" href="{{ url("/inicio")}}">
+          <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70"></a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
 

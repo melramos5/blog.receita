@@ -12,7 +12,7 @@
                     <strong>Categoria:</strong>          {{ $postagem->Categoria->nome }}<br>
                     <strong>Título:</strong>          {{ $postagem->titulo }}<br>
                     <strong>Autor:</strong>          {{ $postagem->user->name }}<br>
-                    <strong>Imagem:</strong>            <br>
+                    <strong>Imagem:</strong>       <br>  <img src="data:image/png;base64,{{ $postagem->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">  <br><br>
                     <strong>Conteúdo:</strong>
                         <br>
                             {!! $postagem->conteudo !!}
