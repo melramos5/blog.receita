@@ -1,0 +1,43 @@
+.foto{
+    text-align: center;
+    border-width: 30px;
+    margin: 30px auto;
+    padding: 60px;
+    width:900px;
+    height:600px;
+
+}
+.ingrediente {
+    background-color:#efab52;
+    border-width: 20px;
+    margin: 20px auto;
+    padding: 10px;
+    width:500px;
+    height:300px;
+}
+.preparo{
+      border-width: 30px;
+      margin: 30px auto;
+      padding: 60px;
+      width:800px;
+      height:600px;
+  }
+.navbar{
+    background-color: #faead5;
+}
+.rodape {
+    background-color: #faead5;
+}
+h2 {
+    text-align: center;
+}
+.pub {
+    float: right;
+    width: 400px;
+    height: 200px;
+}
+.comentario {
+   padding-left: 150px;
+   width: 600px;
+   height: 150px;
+}

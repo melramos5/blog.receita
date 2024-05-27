@@ -15,7 +15,7 @@
 
             <div class="row p-1">
                 <div class="col-md-3 p-3 mt-1">
-                    <a class="navbar-brand" href="{{ url("/inicio")}}">
+                    <a class="navbar-brand" href="{{ url("/receita")}}">
                         <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
 
                             <div class="mt-2">
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="col-md-3 p-3 mt-1">
-                    <a class="navbar-brand" href="{{ url("/inicio")}}">
+                    <a class="navbar-brand" href="{{ url("/receita")}}">
                         <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
 
                             <div class="mt-2">

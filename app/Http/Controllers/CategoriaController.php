@@ -10,7 +10,7 @@ class CategoriaController extends Controller
 
     public function index()
     {
-        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $categorias = Categoria::orderBy('id', 'ASC')->get();
         return view('categoria.index', ['categorias' => $categorias]);
     }
 

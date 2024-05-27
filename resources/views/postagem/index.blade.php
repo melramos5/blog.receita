@@ -42,7 +42,7 @@
                                     <form method="POST" action="{{ url('/postagem/' . $value->id) }}">
                                         @csrf
                                         @method('DELETE')
-                                      <input type="submit"  class="form-control" value="DELETAR">
+                                      <input type="submit"  class="form-control" value="Excluir">
                                     </form>
 
                             </td>
