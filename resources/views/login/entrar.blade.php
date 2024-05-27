@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../Css/css/login.css">
+    <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/loggin.css")}}">
 
 
     <!-- Bootstrap CSS -->
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg " >
         <div class="container" >
             <a class="navbar-brand" href="inicio">
-                <img src="../Css/img/logo.png" alt="" width="170" height="70">
+                <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
         <div class="container p-4" >
             <div class="row ">
                 <div class="user text-center">
-                    <img src="../Css/img/logo.png" width="100">
+                    <img src="{{ url("/assets/imagens/logo.png")}}" width="100">
                 </div>
 
                 <div class="col-md-12" >
@@ -89,7 +89,7 @@
             <div class="row p-4">
               <div class="col-md-3 mt-3">
                 <a class="navbar-brand" href="inicio">
-                  <img src="../Css/img/logo.png" alt="" width="170" height="70">
+                  <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
                 </a>
                 <p></p>
               </div>

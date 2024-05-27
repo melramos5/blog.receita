@@ -16,19 +16,19 @@
         <div class="carousel-item active">
           <img src="https://www.sabornamesa.com.br/media/k2/items/cache/681a23d9bda3cc6608e358bb4db90e3a_XL.jpg" height="500" class="d-block w-100" alt="" style="border-radius: 20px;" >
           <div class="carousel-caption d-none d-md-block">
-            <h5>torta holandesa</h5>
+            <h5>Torta Holandesa</h5>
           </div>
         </div>
         <div class="carousel-item">
           <img src="https://classic.exame.com/wp-content/uploads/2022/08/Tiramisu-Fasano.jpg?quality=70&strip=info&w=1200" height="500" class="d-block w-100" alt="" style="border-radius: 20px;">
           <div class="carousel-caption d-none d-md-block">
-            <h5>tiramisu</h5>
+            <h5>Tiramisu</h5>
           </div>
         </div>
         <div class="carousel-item">
           <img src="https://p2.trrsf.com/image/fget/cf/942/530/images.terra.com/2023/03/31/602302592-tamanho-padrao-gc-64.jpg"  height="500" class="d-block w-100" alt="" style="border-radius: 20px;">
           <div class="carousel-caption d-none d-md-block">
-            <h5>torta de limão</h5>
+            <h5>Torta de Limão</h5>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
         <div class="container " >
           <div class="row ">
             <div class="col-12">
-                <h2 class="fw-bold mt-3 text-center">receitas populares</h2>
+                <h2 class="fw-bold mt-3 text-center">Receitas Populares</h2>
             </div>
         </div>
             <div class="row p-3">
@@ -87,10 +87,12 @@
                 </div>
 
                 <div class="col-md-4 p-3 mt-3">
-                  <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="" style="border-radius: 20px;">
+                    <a href="{{ url("/inicio")}}">
+                  <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="" style="border-radius: 20px;"> </a>
                   <div class="mt-2">
                       <h4 class="fs-5">cookie </h4>
                       <p class="fw-light"></p>
+
 
                   </div>
               </div>
@@ -116,7 +118,7 @@
       <div class="container p-6">
         <div class="row ">
           <div class="col-12">
-              <h2 class="fw-bold mt-2 text-center">adicionadas recentemente </h2>
+              <h2 class="fw-bold mt-2 text-center">Adicionadas Recentemente </h2>
           </div>
       </div>
           <div class="row p-3">

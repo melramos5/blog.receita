@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('titulo');
             //$tabla->text('resumo');
             $table->longText('imagem');
-            $table->text('conteudo');
+            $table->text('ingredientes');
+            $table->text('preparo');
             $table->bigInteger('user_id');
             $table->bigInteger('categoria_id');
             //$table->foreign('categoria_id')->references('id')->on('categorias');

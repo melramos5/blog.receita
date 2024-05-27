@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../Css/css/massas.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/home.css")}}" />
 
 
     <!-- Bootstrap CSS -->
@@ -44,9 +44,12 @@
           <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
           <i class="bi bi-search btn btn-danger me-2" style="border-radius: 20px;"></i>
         </form>
-          <a href="entrar" class="btn btn-danger me-2" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
+          <a href="{{ url("/entrar")}}" class="btn btn-danger me-2" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
       </div>
     </nav>
+
+
+        <!-------------------------------- FOOTER --------------------------------->
 
     <br><br>
 
@@ -60,14 +63,14 @@
                 <div class="row p-4">
                   <div class="col-md-3 mt-3">
                     <a class="navbar-brand" href="inicio">
-                      <img src="../Css/img/logo.png" alt="" width="170" height="70">
+                      <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
                     </a>
                     <p></p>
                   </div>
                   <div class="col-md-3 mt-4">
-                    <h4 class="fs-6">quem somos</h4>
-                    <h4 class="fs-6">privacidade</h4>
-                    <h4 class="fs-6">termos de uso</h4>
+                    <h4 class="fs-6">Quem Somos</h4>
+                    <h4 class="fs-6">Privacidade</h4>
+                    <h4 class="fs-6">Termos de Uso</h4>
                   </div>
 
 

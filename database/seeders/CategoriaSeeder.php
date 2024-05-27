@@ -26,7 +26,7 @@ class CategoriaSeeder extends Seeder
         ]);
 
         DB::table('categorias')->insert([
-            'nome' => 'Frango',
+            'nome' => 'Aves',
         ]);
 
         DB::table('categorias')->insert([

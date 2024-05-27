@@ -30,12 +30,14 @@ class PostagemController extends Controller
 
         $messages = [
             'titulo.required' => 'O campo :attribute é obrigatório!',
-            'conteudo.required' => 'O campo :attribute é obrigatório!',
+            'ingredientes.required' => 'O campo :attribute é obrigatório!',
+            'preparo.required' => 'O campo :attribute é obrigatório!',
         ];
 
         $validated = $request->validate([
             'titulo' => 'required|min:5',
-            'conteudo' => 'required|min:5',
+            'ingredientes' => 'required|min:5',
+            'preparo' => 'required|min:5',
         ], $messages);
 
 
@@ -45,7 +47,8 @@ class PostagemController extends Controller
         $postagem = new Postagem;
         $postagem->titulo = $request->titulo;
         $postagem->imagem = base64_encode (file_get_contents ($imagem));
-        $postagem->conteudo = $request->conteudo;
+        $postagem->ingredientes = $request->ingredientes;
+        $postagem->preparo = $request->preparo;
         $postagem->user_id = $user_id;
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
@@ -78,12 +81,14 @@ class PostagemController extends Controller
 
         $messages = [
             'titulo.required' => 'O campo :attribute é obrigatório!',
-            'conteudo.required' => 'O campo :attribute é obrigatório!',
+            'ingredientes.required' => 'O campo :attribute é obrigatório!',
+            'preparo.required' => 'O campo :attribute é obrigatório!',
         ];
 
         $validated = $request->validate([
             'titulo' => 'required|min:5',
-            'conteudo' => 'required|min:5',
+            'ingredientes' => 'required|min:5',
+            'preparo' => 'required|min:5',
         ], $messages);
 
         $imagem = $request->file('imagem');
@@ -91,7 +96,8 @@ class PostagemController extends Controller
         $postagem = Postagem::find($id);
         $postagem->titulo = $request->titulo;
         $postagem->imagem = base64_encode (file_get_contents ($imagem));
-        $postagem->conteudo = $request->conteudo;
+        $postagem->ingredientes = $request->ingredientes;
+        $postagem->preparo = $request->preparo;
         $postagem->user_id = $user_id;
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();

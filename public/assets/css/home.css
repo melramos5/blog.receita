@@ -1,0 +1,15 @@
+.navbar, .rodape {
+    background-color: #faead5;
+    }
+
+  .carousel {
+    margin: 30px;
+
+  }
+
+  .receitas .img-fluid {
+    height: 200px;
+    width: 600px;
+    border-radius: 20px;
+  }
+

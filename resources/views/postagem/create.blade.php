@@ -41,13 +41,19 @@
                   <label for="fname">Título:</label><br>
                   <input type="text"  class="form-control" name="titulo"><br>
 
-                  <label for="fname">Imagem:</label><br><br>
+                  <label for="fname">Imagem:</label><br>
                   <input type="file"  class="form-control" name="imagem"><br>
 
-                  <label for="fname">Conteúdo:</label><br>
-                    <textarea id="inp_editor1" class="form-control" name="conteudo"  >
+                  <label for="fname">Ingredientes:</label><br>
+                  <textarea id="inp_editor1" class="form-control" name="ingredientes"  >
 
-                    </textarea>
+                  </textarea>
+                  <br><br>
+
+                  <label for="fname">Modo de Preparo:</label><br>
+                    <textarea id="inp_editor2" class="form-control" name="preparo"  >
+
+                    </textarea><br>
 
                   <input type="submit"  class="form-control" value="ENVIAR">
 
@@ -55,6 +61,10 @@
 
                 <script>
                     var editor1 = new RichTextEditor("#inp_editor1");
+                </script>
+
+                <script>
+                    var editor2 = new RichTextEditor("#inp_editor2");
                 </script>
 
                 </div>
