@@ -11,35 +11,26 @@
     </div>
 
 
-        @foreach ($receitas as $value)
+            <div class="row card-grup row-cols-3 p-1">
 
-            <div class="row p-1">
-                <div class="col-md-3 p-3 mt-1">
+                @foreach ($receitas as $value)
+
+                <div class="col-3 p-3 mt-1">
                     <a class="navbar-brand" href="{{ url("/receita")}}">
                         <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
 
                             <div class="mt-2">
-                                <h4 class="fs-5">{{ $value->titulo }}</h4>
+                                <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
                                 <p class="fw-light"></p>
 
                             </div>
                 </div>
-
-                <div class="col-md-3 p-3 mt-1">
-                    <a class="navbar-brand" href="{{ url("/receita")}}">
-                        <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
-
-                            <div class="mt-2">
-                                <h4 class="fs-5">{{ $value->titulo }}</h4>
-                                <p class="fw-light"></p>
-
-                            </div>
-                </div>
+                @endforeach
 
             </div>
 
 
-        @endforeach
+
 
 </section>
 

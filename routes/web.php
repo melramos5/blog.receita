@@ -41,8 +41,6 @@ Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'index'])->
 
 Route::get('/receita', [App\Http\Controllers\ReceitaController::class, 'index'])->name('receita');
 
-Route::get('/massa', [App\Http\Controllers\MassaController::class, 'index'])->name('massa');
-
 Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');

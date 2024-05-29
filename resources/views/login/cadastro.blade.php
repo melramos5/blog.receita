@@ -93,7 +93,7 @@
                     </div>
                   </div>
                       <hr>
-                      <p class="cadastro text-center">Já tem uma conta? <a href="entrar" class="link-danger"><br>Entre aqui</a></p>
+                      <p class="cadastro text-center">Já tem uma conta? <a href="{{ url("/entrar")}}" class="link-danger"><br>Entre aqui</a></p>
 
                 </div>
  </form>
