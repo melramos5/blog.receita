@@ -1,8 +1,9 @@
-.foto{
+.foto {
+
     text-align: center;
     margin: 30px auto;
     padding: 20px;
-    width:900px;
+    width:700px;
     height:400px;
 }
 .navbar{
@@ -15,10 +16,10 @@ h2 {
     text-align: center;
 }
 .comentario {
-   padding-left: 70px;
-   width: 600px;
-   height: 250px;
-   margin: 10px;
+   padding: 40px;
+   width: 500px;
+   height: 200px;
+   margin: 50px ;
 }
 .conteudo {
     padding: 20px;
@@ -38,4 +39,11 @@ h2 {
     padding: 60px;
     width:500px;
     height:400px;
+}
+
+.icones {
+        text-align: center;
+        padding: 20px;
+        width:600px;
+        height:300px;
 }
