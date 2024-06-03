@@ -21,4 +21,12 @@ class SiteController extends Controller
         $receitas = Postagem::where('categoria_id', $id)->get();
         return view('site.index', ['categorias' => $categorias,'receitas' => $receitas]);
     }
+
+    public function exibirNome($nome) {
+        // Recupera a categoria do banco de dados pelo ID fornecido
+        $categoria = Categoria::findOrFail($nome);
+
+        // Passa a categoria para a view
+        return view('site.index', compact('categoria'));
+    }
 }

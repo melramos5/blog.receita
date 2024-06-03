@@ -15,4 +15,11 @@ class ReceitaController extends Controller
         $receitas = Postagem::get();
         return view('site.receita', ['categorias' => $categorias, 'receitas' => $receitas]);
     }
+
+    public function show(string $id)
+    {
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $postagem = Postagem::find($id);
+        return view('site.receita', ['postagem' => $postagem, 'categorias' => $categorias]);    
+    }
 }

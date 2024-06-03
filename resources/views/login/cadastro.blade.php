@@ -24,7 +24,7 @@
     <!-------------------------------- NAVBAR --------------------------------->
     <nav class="navbar navbar-expand-lg" >
         <div class="container" >
-            <a class="navbar-brand" href="inicio">
+            <a class="navbar-brand" href="{{ url("/")}}">
               <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -112,7 +112,7 @@
         <div class="container">
             <div class="row p-4">
               <div class="col-md-3 mt-3">
-                <a class="navbar-brand" href="inicio">
+                <a class="navbar-brand" href="{{ url("/")}}">
                   <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
                 </a>
                 <p></p>

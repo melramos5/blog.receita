@@ -22,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url("/inicio")}}">
+        <a class="navbar-brand" href="{{ url("/")}}">
           <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70"></a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="row p-4">
                   <div class="col-md-3 mt-3">
-                    <a class="navbar-brand" href="inicio">
+                    <a class="navbar-brand" href="{{ url("/")}}">
                       <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
                     </a>
                     <p></p>

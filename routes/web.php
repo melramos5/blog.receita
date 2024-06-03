@@ -7,8 +7,9 @@ use App\Http\Controllers\AdmController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EntrarController;
 use App\Http\Controllers\CadastroController;
-use App\Http\Controllers\InicioController;
 use App\Http\Controllers\ReceitaController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\SalvosController;
 
 
 /*
@@ -28,7 +29,7 @@ use App\Http\Controllers\ReceitaController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\SiteController::class, 'index'])->name('site.index');
+Route::get('/todas', [App\Http\Controllers\SiteController::class, 'index'])->name('site.index');
 
 Route::get('/site/categoria/{id}', [App\Http\Controllers\SiteController::class, 'categoria'])->name('site.categoria');
 
@@ -37,9 +38,15 @@ Route::get('/site/categoria/{id}', [App\Http\Controllers\SiteController::class, 
 
 Route::get('/adm', [App\Http\Controllers\AdmController::class, 'index'])->name('adm');
 
-Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'index'])->name('inicio');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/receita', [App\Http\Controllers\ReceitaController::class, 'index'])->name('receita');
+
+Route::get('/receita/{id}', [App\Http\Controllers\ReceitaController::class, 'show'])->name('receita.show');
+
+Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
+
+Route::get('/salvos', [App\Http\Controllers\SalvosController::class, 'index'])->name('salvos');
 
 Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
 
