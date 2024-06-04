@@ -40,9 +40,7 @@ Route::get('/adm', [App\Http\Controllers\AdmController::class, 'index'])->name('
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/receita', [App\Http\Controllers\ReceitaController::class, 'index'])->name('receita');
-
-Route::get('/receita/{id}', [App\Http\Controllers\ReceitaController::class, 'show'])->name('receita.show');
+Route::get('/receita/{id}', [App\Http\Controllers\ReceitaController::class, 'show'])->name('receita');
 
 Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
 

@@ -13,6 +13,7 @@ class HomeController extends Controller
     {
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::limit(6)->get();
-        return view('site.home', ['categorias' => $categorias, 'receitas' => $receitas]);
+        $receitasRecentes = Postagem::limit(8)->orderBy('id', 'desc')->get();
+        return view('site.home', ['categorias' => $categorias, 'receitas' => $receitas, 'receitasRecentes' => $receitasRecentes]);
     }
 }

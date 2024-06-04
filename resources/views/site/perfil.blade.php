@@ -12,7 +12,8 @@
                     <img src="{{ url("/assets/imagens/perfil.png")}}" width="170">
                 </div>
                 <div class="col-md-12" >
-                    <h2 class="text-danger fw-bold ms-3 py-3">mel ramos</h2>
+                    <h2 class="text-danger fw-bold ms-3 py-3">{!! $perfil->name !!}</h2>
+
                 </div>
                 <hr>
 
@@ -30,7 +31,7 @@
                 <hr>
                 <br><br>
             </div>
-                <h5>você não publicou nenhuma receita ainda :(</h5>
+                <h5>você não publicou nenhuma receita ainda :</h5>
                   <a href="publicar.html" class="link-secondary"><i class="bi bi-pencil-square"> publicar uma receita</i></a>
         </div>
     </section>
