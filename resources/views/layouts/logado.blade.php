@@ -53,7 +53,7 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #FBF7F1;">
           <li><a class="dropdown-item" href="{{ url("/perfil")}}"><i class="bi bi-person"> perfil</i></a></li>
           <li><a class="dropdown-item" href="{{ url("/salvos")}}"><i class="bi bi-bookmark"> salvos</i></a></li>
-          <li><a class="dropdown-item" href="publicar.html"><i class="bi bi-pencil-square"> publicar</i></a></li>
+          <li><a class="dropdown-item" href={{ url("/publicar")}}><i class="bi bi-pencil-square"> publicar</i></a></li>
           <li><a class="dropdown-item" href="perfil2.html"><i class="bi bi-pencil"> editar perfil</i></a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"> sair</i></a></li>

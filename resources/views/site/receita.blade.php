@@ -26,8 +26,8 @@
         <p>{!! $postagem->ingredientes !!}</p>
 
     </div>
-<div class="hr" style="padding-left: 400px; padding-right: 400px; color: coral;">
-<hr>
+<div class="hr" style="padding-left: 200px; padding-right: 200px; color: coral;"><br>
+<hr size="6"><br>
 </div>
 </div>
 <!-------------------------------PREPARO-------------------------->
@@ -46,6 +46,11 @@
   <br> <br>
 <!---------------------------COMENTÁRIO----------------------------------------->
 
+<ul class="stats">
+    <li><a href="#">{{ $postagem->categoria->nome }}</a></li>
+    <li><a href="#" class="icon solid fa-heart">123</a></li>
+    <li><a href="#" class="icon solid fa-comment">{{ $postagem->comentarios->count()}} comentarios</a></li>
+    </ul>
 
 <section class="comentario">
     <div class="container-fluid">
@@ -62,6 +67,7 @@
 </div>
 </div>
 </section>
+
 <br><br>
 <h3>Comentarios:</h3>
 @foreach ($postagem->comentarios as $value)

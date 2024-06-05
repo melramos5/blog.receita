@@ -10,6 +10,7 @@ use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\ReceitaController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\SalvosController;
+use App\Http\Controllers\PublicarController;
 
 
 /*
@@ -45,9 +46,13 @@ Route::get('/salvos', [App\Http\Controllers\SalvosController::class, 'index'])->
 
 Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
 
+Route::get('/publicar', [App\Http\Controllers\PublicarController::class, 'index'])->name('publicar');
+
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
 
 Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
+
+Route::post('/publicar/create', [PublicarController::class, 'store'])->name('publicar.store');
 
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
