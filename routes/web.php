@@ -50,6 +50,7 @@ Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
 
+Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
 

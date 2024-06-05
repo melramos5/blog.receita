@@ -50,11 +50,31 @@
   <div class="container-fluid">
     <div class="comentario">
     <h6>Comentário</h6>
-    <textarea class="form-control"></textarea>
+    <textarea class="form-control"></textarea><br>
   </div>
   </div>
 </section>
 <button type="button" class="btn btn-warning">ENVIAR</button>
 
+
+<label for="fname">COMENTARIO</label><br>
+<form method="POST" action="{{ url('/comentario/create') }}">
+    @csrf
+        <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+
+  <input type="text"  class="form-control" name="conteudo"><br><br>
+  <input type="submit"  class="form-control" value="ENVIAR">
+
+
+</form>
+
+<h3>Comentarios:</h3>
+@foreach ($postagem->comentarios as $value)
+    <p>{{ $value->conteudo }}</p>
+    <p>Feito Por: {{ $value->user->name }}</p>
+    <p>Data: {{ $value->created_at }}
+    <br><br>
+
+@endforeach
 
 @endsection
