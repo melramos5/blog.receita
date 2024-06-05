@@ -2,9 +2,16 @@
     background-color: #faead5;
     }
 
-    .img-fluid {
-        width: 300px;
-        height: 100px;
-    }
 
-    
+    a, label, button, h4 {
+        font-family: Georgia, serif;
+        color:#490e0d;
+    }
+    .receitas img {
+        height: 200px;
+        width: 500px;
+        border-radius: 20px;
+      }
+h2 {
+    color:#490e0d
+}
