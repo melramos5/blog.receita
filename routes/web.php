@@ -33,9 +33,6 @@ Route::get('/todas', [App\Http\Controllers\SiteController::class, 'index'])->nam
 
 Route::get('/site/categoria/{id}', [App\Http\Controllers\SiteController::class, 'categoria'])->name('site.categoria');
 
-
-
-
 Route::get('/adm', [App\Http\Controllers\AdmController::class, 'index'])->name('adm');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -49,6 +46,8 @@ Route::get('/salvos', [App\Http\Controllers\SalvosController::class, 'index'])->
 Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
+
+Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
 
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
