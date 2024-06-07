@@ -49,20 +49,28 @@
                 <hr>
                 <h3 class="h3 fw-bolder text-center">LOGIN</h3>
                 <br>
+
+            <form action="{{ url('login_usuario')}}" method="post">
+                @csrf
                     <div class="mb-3 row">
                         <label for="exampleFormControlInput1" class=" col-sm-2 col-form-label" style="border-radius: 20px;">Email</label>
                         <div class="col-sm-10">
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com" style="border-radius: 20px;">
+                        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com" style="border-radius: 20px;">
                       </div>
                     </div>
+
                       <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword" placeholder="senha" style="border-radius: 20px;">
+                          <input name="password" type="password" class="form-control" id="inputPassword" placeholder="senha" style="border-radius: 20px;">
                         </div>
                       </div>
+
+
                       <div class="d-grid gap-2 col-6 mx-auto">
-                        <a href="home/home2.html" class="btn btn-warning" type="submit" style="border-radius: 20px;">LOGIN</a>
+                        <button type="LOGIN">Login</button>
+                </form>
+
 
                     </div>
                     <br>

@@ -53,8 +53,7 @@ Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'
 
 Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
 
-
-
+Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'login'])->name('login_usuario');
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
 
@@ -81,6 +80,7 @@ Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::cl
     // DESTROY DELETE
     Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.destroy');
 
+    Route::post('/login_usuario/{id}', [UserController::class, 'login'])->name('login.usuario');
 
     // -------------------------------CRUD POSTAGEM ----------------------------------------
 
