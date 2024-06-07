@@ -10,6 +10,7 @@ use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\ReceitaController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\SalvosController;
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\PublicarController;
 
 
@@ -52,7 +53,7 @@ Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'
 
 Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
 
-Route::post('/publicar/create', [PublicarController::class, 'store'])->name('publicar.store');
+
 
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
@@ -106,3 +107,17 @@ Route::post('/publicar/create', [PublicarController::class, 'store'])->name('pub
     // DESTROY DELETE
     Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('postagem.destroy');
 
+
+    // -------------------------------CRUD PUBLICAR ----------------------------------------
+
+    Route::get('/publicar/create', [PublicarController::class, 'create'])->name('publicar.create');
+
+    Route::post('/publicar/create', [PublicarController::class, 'store'])->name('publicar.store');
+
+    Route::get('/publicar/{id}', [PublicarController::class, 'show'])->name('publicar.show');
+
+    Route::get('/publicar/{id}/edit', [PublicarController::class, 'edit'])->name('publicar.edit');
+
+    Route::put('/publicar/{id}/edit', [PublicarController::class, 'update'])->name('publicar.update');
+
+    Route::delete('/publicar/{id}', [PublicarController::class, 'destroy'])->name('publicar.destroy');

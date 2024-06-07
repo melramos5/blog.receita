@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Postagem;
 use App\Models\Categoria;
+use App\Models\Publicar;
 
 class PublicarController extends Controller
 {
@@ -53,7 +54,8 @@ class PublicarController extends Controller
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
 
-        return redirect('postagem')->with('status', 'Postagem salva com sucesso!');
+
+        return back()->withInput()->with('status', 'Postagem salva com sucesso!');
 
     }
 
@@ -61,7 +63,7 @@ class PublicarController extends Controller
     public function show(string $id)
     {
         $postagem = Postagem::find($id);
-        return view('postagem.show', ['postagem' => $postagem]);
+        return view('site.publicar', ['postagem' => $postagem]);
     }
 
 
@@ -69,7 +71,7 @@ class PublicarController extends Controller
     {
         $postagem = Postagem::find($id);
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view('postagem.edit', ['postagem' => $postagem, 'categorias' => $categorias]);
+        return view('site.publicar', ['postagem' => $postagem, 'categorias' => $categorias]);
     }
 
 
@@ -102,7 +104,7 @@ class PublicarController extends Controller
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
 
-        return redirect('postagem')->with('status', 'Postagem atualizada com sucesso!');
+        return back()->withInput()->with('status', 'Postagem salva com sucesso!');
 
     }
 
@@ -112,6 +114,7 @@ class PublicarController extends Controller
         $postagem = Postagem::find($id);
         $postagem->delete();
 
-        return redirect('postagem')->with('status', 'Postagem excluida com sucesso!');
+        return back()->withInput()->with('status', 'Postagem salva com sucesso!');
     }
+
 }

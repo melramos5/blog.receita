@@ -11,7 +11,7 @@ class PostagemController extends Controller
 
     public function index()
     {
-        $postagens = Postagem::orderBy('id', 'ASC')->get();
+        $postagens = Postagem::orderBy('id', 'DESC')->get();
         return view('postagem.index', ['postagens' => $postagens]);
     }
 
