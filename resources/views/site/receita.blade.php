@@ -5,6 +5,13 @@
 
 
 <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receita.css")}}" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
    <!----------------------------------------FOTO------------------------------------->
 
     <div class="foto text-center">
@@ -23,19 +30,25 @@
     </div>
   </div>
 
-<!-----------------------------------------------ING---------------------------------------->
+<!------------------------------ING---------------------------->
 
         <div class="ing" >
             <hr>
                 <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
             <hr>
                         <div class="mt-2">
-                        <p>{!! $postagem->ingredientes !!}</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <h5> {!! $postagem->ingredientes !!} </h5>
+                                </label>
+                              </div>
+
                         </div>
         </div>
             <hr>
 
-<!------------------------------------PREP---------------------------->
+<!------------------------PREP------------------------>
 
 
 
@@ -50,11 +63,11 @@
 </div>
 
 
-<!--------------------------------COMENTARIO----------------------->
+<!-------------------------COMENTARIO----------------------->
 <section class="comentario">
     <div classs="comentario">
-    <div class="container-fluid">
-    <h6>gostou? deixe um comentario</h6>
+     <div class="container-fluid">
+        <h6>gostou? deixe um comentario</h6>
                   <div class="form-floating">
 
                 <form method="POST" action="{{ url('/comentario/create') }}">
@@ -67,7 +80,8 @@
 
     </div>
     </div>
-    </section>
+</div>
+</section>
 
     <br><br>
 <h3>Comentarios:</h3>

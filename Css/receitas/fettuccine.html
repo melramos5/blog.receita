@@ -1,79 +1,163 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
 
-<link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receita.css")}}" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-   <!----------------------------------------FOTO------------------------------------->
+    <title>MELANE senha</title>
+    <style>
+.ing {
+    border-radius: 30px;
+    margin: 20px auto;
+    padding: 60px;
+    width:500px;
+    height:450px;
+    background-color: #fdffb7;
+}
+.prep {
+    margin: 20px auto;
+    padding: 60px;
+    width:700px;
+    height:700px;
+}
 
-    <div class="foto text-center">
-    <h2 class="titulo text-black fw-bold">{!! $postagem->titulo !!}</h2>
-    <div class="container-fluid">
-      <br>
-      <img src="data:image/png;base64,{!! $postagem->imagem !!}"width="700px" height="400px" style="border-radius: 20px;">
-        <p class="pub"{!! $postagem->user->name !!}></p>
 
-        <div class="icones">
-            <div class="btn-group" >
-                <a href="#" class="btn btn" aria-current="page"><i class='far fa-bookmark' style='color:red;'></i> salvar</a>
-                <a href="#" class="btn btn"><i class='far fa-flag' style='color:red;'></i> denunciar</a>
+    </style>
+</head>
+<body>
+
+
+
+    <section class="comment">
+        <div class="container-fluid">
+            <div class="row p-6 align-items-center" >
+                <div class="col-md-6" >
+                    <h6>gostou? deixe um comentario</h6>
+                    <div class="form-floating">
+                        <form method="POST" action="{{ url('/comentario/create') }}">
+                            @csrf
+                            <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+                            <textarea class="form-control" name="conteudo"></textarea><br>
+                            <input type="submit" class="btn btn-warning" value="ENVIAR" style="float: right;">
+                        </form>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-6" >
+                    <h3>Comentarios:</h3>
+                    @foreach ($postagem->comentarios as $value)
+                        <p>{{ $value->conteudo }}</p>
+                        <p>Feito Por: {{ $value->user->name }}</p>
+                        <p>Data: {{ $value->created_at }}
+                        <br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<div class="comment">
+    <div class="container-fluid p-6">
+      <div class="row p-6">
+        <div class="col-md-6  mt-4">
+          <div class="com" style="border-radius: 20px;">
+            <div class="mt-2">
+                <h6>gostou? deixe um comentario</h6>
+                <div class="form-floating">
+                    <form method="POST" action="{{ url('/comentario/create') }}">
+                        @csrf
+                        <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+                        <textarea class="form-control" name="conteudo"></textarea><br>
+                        <input type="submit" class="btn btn-warning" value="ENVIAR" style="float: right;">
+                    </form>
+                    <br>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+
+          <div class="col-md-6 p-2 mt-4">
+            <div class="com2" style="border-radius: 20px;">
+              <div class="mt-2">
+                <div class="col-md-6" >
+                    <h3>Comentarios:</h3>
+                    @foreach ($postagem->comentarios as $value)
+                        <p>{{ $value->conteudo }}</p>
+                        <p>Feito Por: {{ $value->user->name }}</p>
+                        <p>Data: {{ $value->created_at }}
+                        <br><br>
+                </div>
+              </div>
             </div>
         </div>
     </div>
   </div>
 
-<!-----------------------------------------------ING---------------------------------------->
 
-        <div class="ing" >
-            <hr>
-                <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
-            <hr>
-                        <div class="mt-2">
-                        <p>{!! $postagem->ingredientes !!}</p>
-                        </div>
+
+
+
+
+
+            <br> <br>
+            <footer class="rodape">
+                <div class="container">
+                    <div class="row p-4">
+                      <div class="col-md-3 mt-3">
+                        <a class="navbar-brand" href="#">
+                          <img src="img/logo.png" alt="" width="170" height="70">
+                        </a>
+                        <p></p>
+                      </div>
+                      <div class="col-md-3 mt-4">
+                        <h3 class="fs-6">Quem somos</h3>
+                        <h3 class="fs-6">Privacidade</h3>
+                        <h3 class="fs-6">Termos de uso</h3>
+                      </div>
+
+
+                      <div class="col-md-4 mt-3">
+                        <h3 class="fs-6 ms-3">REDES SOCIAIS</h3>
+                        <ul class="nav">
+                            <li class="nav-item">
+                              <a class="nav-link text-primary fs-3" aria-current="page" href="#"><i class="bi bi-facebook"></i></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-info fs-3" href="#"><i class="bi bi-twitter"></i></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-danger fs-3" href="#"><i class="bi bi-instagram"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-success fs-3" href="#"><i class="bi bi-whatsapp"></i></a>
+                              </li>
+                          </ul>
+                      </div>
+
+                    </div>
+                  </div>
+            </footer>
+
         </div>
-            <hr>
 
-<!------------------------------------PREP---------------------------->
-
-
-
-<div class="prep" style="border-radius: 20px;">
-    <div class="mt-2">
-      <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
-            <br>
-            <div class="container-fluid">
-            <p>{!! $postagem->preparo !!}</p>
-            </div>
-    </div>
-</div>
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+            </script>
 
 
-<!--------------------------------COMENTARIO----------------------->
-<section class="comentario">
-    <div classs="comentario">
-    <div class="container-fluid">
-    <h6>gostou? deixe um comentario</h6>
-                  <div class="form-floating">
+        </body>
 
-                <form method="POST" action="{{ url('/comentario/create') }}">
-                    @csrf
-                    <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
-                    <textarea class="form-control" name="conteudo"></textarea><br>
-
-                <input type="submit"  class="btn btn-warning" value="ENVIAR">
-                </form>
-
-    </div>
-    </div>
-    </section>
-
-    <br><br>
-<h3>Comentarios:</h3>
-@foreach ($postagem->comentarios as $value)
-    <p>{{ $value->conteudo }}</p>
-    <p>Feito Por: {{ $value->user->name }}</p>
-    <p>Data: {{ $value->created_at }}
-    <br><br>
-
-@endforeach
-
-    @endsection
+        </html>
