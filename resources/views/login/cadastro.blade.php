@@ -14,7 +14,7 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title>MELANE cadastro</title>
+    <title>MELANE</title>
 </head>
 <body>
     <div id="fundo">
@@ -37,7 +37,7 @@
     <br> <br>
 
 
-    <!----------------------- CONTEUDO------------------------------------------------->
+    <!----------------------- CONTEUDO ------------------------------------------------->
 
 
     <div class="cad" >
@@ -52,24 +52,25 @@
                 <hr>
                 <h3 class="h3 fw-bolder text-center">CADASTRO</h3>
                 <br>
-                <form>
 
+            <form action="{{ url('cadastrar_usuario')}}" method="post">
+                @csrf
                   <div class="mb-2 row">
                     <label for="fname" class=" col-sm-2 col-form-label">Nome</label>
                     <div class="col-sm-10">
-                    <input type="fname" class="form-control" id="fname" placeholder="nome completo" style="border-radius: 20px;">
-                  </div>
+                    <input name="name" type="fname" class="form-control" id="fname" placeholder="nome completo" style="border-radius: 20px;">
+                </div>
                 </div>
                   <div class="mb-2 row">
-                    <label for="exampleFormControlInput1" class=" col-sm-2 col-form-label">Email</label>
+                    <label  for="exampleFormControlInput1" class=" col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com" style="border-radius: 20px;">
+                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com" style="border-radius: 20px;">
                   </div>
                 </div>
                   <div class="mb-2 row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="senha" style="border-radius: 20px;">
+                      <input name="password" type="password" class="form-control" id="inputPassword" placeholder="senha" style="border-radius: 20px;">
                     </div>
                   </div>
                   <div id="passwordHelpBlock" class="form-text">
@@ -83,11 +84,11 @@
                   <div class="mb-2 row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Confirmar Senha</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="confirmar senha" style="border-radius: 20px;">
+                      <input name="password" type="password" class="form-control" id="inputPassword" placeholder="confirmar senha" style="border-radius: 20px;">
                     </div>
 
                     <div class="d-grid gap-2 col-6 mx-auto" >
-                      <a href="home/home2.html" class="btn btn-warning" type="button" style="border-radius: 20px;">CADASTRAR</a>
+                      <button type="LOGIN">CADASTRAR</button>
 
                       </div>
                     </div>
@@ -97,6 +98,7 @@
 
                 </div>
  </form>
+
             </div>
 
         </div>

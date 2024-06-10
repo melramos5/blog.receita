@@ -4,97 +4,88 @@
 @section('content')
 
 
+<link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receita.css")}}" />
 
-    <!----------------------------CONTEUDO------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
-<div class="container-fluid">
-    <div class="foto">
-     <h2 class="titulo text-black fw-bold"> FETTUCCINE ALFREDO</h2>
-<br>
-     <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" width="700px" height="400px" style="border-radius: 20px;">
-        <p class="pub">publicado por jerson resende</p>
+   <!----------------------------------------FOTO------------------------------------->
 
-    </div>
-</div>
-
-<!---------------------------INGREDIENTES-------------------------------->
-
-<div class="container-fluid">
-<div class="ingrediente" style="border-radius: 20px;">
-    <h2> ingredientes</h2>
-<br>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          250 g de macarrão fettuccine
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          1 xícara (chá) de creme de leite fresco
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          2 colheres (sopa) de manteiga
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          ⅔ de xícara (chá) de queijo parmesão ralado
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          sal a gosto
-        </label>
-      </div>
-    </div>
-<div class="hr" style="padding-left: 400px; padding-right: 400px; color: coral;">
-<hr>
-</div>
-</div>
-<!-------------------------------PREPARO-------------------------->
-
-  <section class="preparo">
+    <div class="foto text-center">
+    <h2 class="titulo text-black fw-bold">{!! $postagem->titulo !!}</h2>
     <div class="container-fluid">
-        <div class="row " >
-            <div class="d-flex col-md-6" >
-              <h2> Modo de preparo </h2> <i class="fa-solid fa-clock"></i>
-             </div>
-              <ul>
-                <li> Numa panela grande, coloque 3 litros de água e 1 colher (sopa) de sal. </li>
-                <li>Leve ao fogo alto. </li>
-                <li>Quando a água ferver, coloque o macarrão e deixe cozinhar conforme as instruções da embalagem. </li>
-                <li>Cuidado para não deixar o macarrão cozinhar demais, ele deve ficar al dente</li>
-                 <li>Enquanto o macarrão cozinha, comece a preparar o molho. </li>
-                 <li>Numa panela, junte a manteiga e o creme de leite fresco e leve ao fogo alto para ferver, mexendo sempre.</li>
-                 <li>Sem parar de mexer, deixe cozinhar por 3 minutos. Desligue o fogo e reserve.</li>
-                 <li>Com cuidado, despeje o macarrão cozido em um escorredor.</li>
-                 <li>A seguir, transfira o fettuccine para 2 pratos individuais. </li>
-                 <li>Com uma colher, distribua o molho bem quente sobre o macarrão, misture e polvilhe com o parmesão ralado. </li>
-                 <li>Sirva a seguir.  </li>
-             </ul>
+      <br>
+      <img src="data:image/png;base64,{!! $postagem->imagem !!}"width="700px" height="400px" style="border-radius: 20px;">
+        <p class="pub"{!! $postagem->user->name !!}></p>
+
+        <div class="icones">
+            <div class="btn-group" >
+                <a href="#" class="btn btn" aria-current="page"><i class='far fa-bookmark' style='color:red;'></i> salvar</a>
+                <a href="#" class="btn btn"><i class='far fa-flag' style='color:red;'></i> denunciar</a>
+            </div>
         </div>
     </div>
-</section>
+  </div>
 
-  <br> <br>
-<!---------------------------COMENTÁRIO----------------------------------------->
+<!------------------------------ING---------------------------->
 
+        <div class="ing" >
+            <hr>
+                <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
+            <hr>
+                        <div class="mt-2">
+
+                                    <h5> {!! $postagem->ingredientes !!} </h5>
+                        </div>
+        </div>
+            <hr>
+
+<!------------------------PREP------------------------>
+
+
+
+<div class="prep" style="border-radius: 20px;">
+    <div class="mt-2">
+      <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
+            <br>
+            <div class="container-fluid">
+            <p>{!! $postagem->preparo !!}</p>
+            </div>
+    </div>
+</div>
+
+
+<!-------------------------COMENTARIO----------------------->
 <section class="comentario">
-  <div class="container-fluid">
-    <div class="comentario">
-    <h6>Comentário</h6>
-    <textarea class="form-control"></textarea>
-  </div>
-  </div>
+    <div classs="comentario">
+    <div class="container-fluid">
+    <h6>Gostou? Deixe um Comentario!</h6>
+                  <div class="form-floating">
+
+                <form method="POST" action="{{ url('/comentario/create') }}">
+                    @csrf
+                    <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+                    <textarea class="form-control" name="conteudo"></textarea><br>
+
+                <input type="submit"  class="btn btn-warning" value="ENVIAR">
+                </form>
+
+    </div>
+    </div>
+</div>
 </section>
-<button type="button" class="btn btn-warning">ENVIAR</button>
 
+    <br><br>
+<h3>Comentarios:</h3>
+@foreach ($postagem->comentarios as $value)
+    <p>{{ $value->conteudo }}</p>
+    <p>Feito Por: {{ $value->user->name }}</p>
+    <p>Data: {{ $value->created_at }}
+    <br><br>
 
-@endsection
+@endforeach
+
+    @endsection

@@ -6,20 +6,31 @@ use Illuminate\Http\Request;
 use App\Models\Postagem;
 use App\Models\Categoria;
 
-class PostagemController extends Controller
+class PublicacaoController extends Controller
 {
+    public function indexUsuario()
+    {
+        $perfil = auth()->user();
+        $postagens = Postagem::orderBy('id', 'DESC')->get();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $receitas = Postagem::get();
+        return view('site.receitaUsuario', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
+    }
 
     public function index()
     {
-        $postagens = Postagem::orderBy('id', 'DESC')->get();
-        return view('postagem.index', ['postagens' => $postagens]);
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $receitas = Postagem::get();
+        return view('publicacao.publicar', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
-
 
     public function create()
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view('postagem.create', ['categorias' => $categorias]);
+        $receitas = Postagem::get();
+        return view('publicacao.publicar', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
 
@@ -53,23 +64,31 @@ class PostagemController extends Controller
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
 
-        return redirect('postagem')->with('status', 'Postagem salva com sucesso!');
+
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $receitas = Postagem::get();
+        $postagens = Postagem::orderBy('id', 'DESC')->get();
+        return view('site.receitausuario', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
 
     }
 
 
     public function show(string $id)
     {
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $postagem = Postagem::find($id);
-        return view('postagem.show', ['postagem' => $postagem]);
+        return view('publicacao.visualizar', ['categorias' => $categorias,'postagem' => $postagem, 'perfil' => $perfil]);
     }
 
 
     public function edit(string $id)
     {
+        $perfil = auth()->user();
         $postagem = Postagem::find($id);
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view('postagem.edit', ['postagem' => $postagem, 'categorias' => $categorias]);
+        return view('publicacao.editar', ['postagem' => $postagem, 'categorias' => $categorias, 'perfil' => $perfil]);
     }
 
 
@@ -102,17 +121,19 @@ class PostagemController extends Controller
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
 
-        return redirect('postagem')->with('status', 'Postagem atualizada com sucesso!');
+        return redirect()->route('receita.usuario');
 
     }
 
 
     public function destroy(string $id)
     {
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $postagem = Postagem::find($id);
         $postagem->delete();
 
-        return redirect('postagem')->with('status', 'Postagem excluida com sucesso!');
+        return redirect()->route('receita.usuario');
     }
 
 }

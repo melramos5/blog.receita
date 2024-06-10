@@ -13,7 +13,7 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title>MELANE massa</title>
+    <title>MELANE</title>
 </head>
 <body>
     <div id="fundo">
@@ -47,13 +47,14 @@
 
 <div class="dropdown">
         <a href="perfil3.html" class="btn btn me-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-           <img src="{{ url("/assets/imagens/perfil.png")}}" width="25">
-             mel ramos
+           <img src="{{ url("/assets/imagens/perfil.png")}}" width="25" >
+           {!! $perfil->name !!}
         </a>
+
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #FBF7F1;">
           <li><a class="dropdown-item" href="{{ url("/perfil")}}"><i class="bi bi-person"> perfil</i></a></li>
           <li><a class="dropdown-item" href="{{ url("/salvos")}}"><i class="bi bi-bookmark"> salvos</i></a></li>
-          <li><a class="dropdown-item" href="publicar.html"><i class="bi bi-pencil-square"> publicar</i></a></li>
+          <li><a class="dropdown-item" href={{ url("/publicar")}}><i class="bi bi-pencil-square"> publicar</i></a></li>
           <li><a class="dropdown-item" href="perfil2.html"><i class="bi bi-pencil"> editar perfil</i></a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"> sair</i></a></li>

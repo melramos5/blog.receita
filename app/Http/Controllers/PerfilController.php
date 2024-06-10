@@ -11,8 +11,9 @@ class PerfilController extends Controller
 
     public function index()
     {
+        $perfil = auth()->user();
+        $postagens = Postagem::orderBy('id', 'DESC')->get();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        $receitas = Postagem::get();
-        return view('site.perfil', ['categorias' => $categorias, 'receitas' => $receitas]);
+        return view('site.perfil', ['categorias' => $categorias, 'perfil' => $perfil, 'postagens' => $postagens]);
     }
 }

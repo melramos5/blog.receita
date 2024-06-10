@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Postagem extends Model
+class Publicar extends Model
 {
     use HasFactory;
-    protected $table = 'postagens';
+    protected $table = 'publicar';
 
     public function categoria(): HasOne
     {

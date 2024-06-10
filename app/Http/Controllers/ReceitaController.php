@@ -11,15 +11,18 @@ class ReceitaController extends Controller
 
     public function index()
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
-        return view('site.receita', ['categorias' => $categorias, 'receitas' => $receitas]);
+        return view('site.receita', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
     public function show(string $id)
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $postagem = Postagem::find($id);
-        return view('site.receita', ['postagem' => $postagem, 'categorias' => $categorias]);    
+        return view('site.receita', ['postagem' => $postagem, 'categorias' => $categorias, 'perfil' => $perfil]);
     }
 }
+
