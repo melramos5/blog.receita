@@ -1,5 +1,5 @@
 
-@extends('layouts.logado')
+@extends('layouts.app')
 
 @section('content')
 
@@ -54,7 +54,7 @@
 <section class="comentario">
     <div classs="comentario">
     <div class="container-fluid">
-    <h6>gostou? deixe um comentario</h6>
+    <h6>Gostou? Deixe um Comentario!</h6>
                   <div class="form-floating">
 
                 <form method="POST" action="{{ url('/comentario/create') }}">

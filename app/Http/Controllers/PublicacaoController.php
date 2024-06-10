@@ -5,22 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Postagem;
 use App\Models\Categoria;
-use App\Models\Publicar;
 
-class PublicarController extends Controller
+class PublicacaoController extends Controller
 {
 
     public function index()
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
-        return view('site.publicar', ['categorias' => $categorias, 'receitas' => $receitas]);
+        return view('publicacao.publicar', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
     public function create()
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view('site.publicar', ['categorias' => $categorias]);
+        $receitas = Postagem::get();
+        return view('publicacao.publicar', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
 
@@ -55,23 +57,30 @@ class PublicarController extends Controller
         $postagem->save();
 
 
-        return back()->withInput()->with('status', 'Postagem salva com sucesso!');
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $receitas = Postagem::get();
+        $postagens = Postagem::orderBy('id', 'DESC')->get();
+        return view('site.perfil', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
 
     }
 
 
     public function show(string $id)
     {
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $postagem = Postagem::find($id);
-        return view('site.publicar', ['postagem' => $postagem]);
+        return view('publicacao.visualizar', ['categorias' => $categorias,'postagem' => $postagem, 'perfil' => $perfil]);
     }
 
 
     public function edit(string $id)
     {
+        $perfil = auth()->user();
         $postagem = Postagem::find($id);
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view('site.publicar', ['postagem' => $postagem, 'categorias' => $categorias]);
+        return view('publicacao.editar', ['postagem' => $postagem, 'categorias' => $categorias, 'perfil' => $perfil]);
     }
 
 
@@ -104,17 +113,19 @@ class PublicarController extends Controller
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
 
-        return back()->withInput()->with('status', 'Postagem salva com sucesso!');
+        return redirect()->route('perfil');
 
     }
 
 
     public function destroy(string $id)
     {
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $postagem = Postagem::find($id);
         $postagem->delete();
 
-        return back()->withInput()->with('status', 'Postagem salva com sucesso!');
+        return redirect()->route('perfil');
     }
 
 }

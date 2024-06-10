@@ -12,9 +12,10 @@ class HomeController extends Controller
 
     public function index()
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::limit(6)->get();
         $receitasRecentes = Postagem::limit(8)->orderBy('id', 'desc')->get();
-        return view('site.home', ['categorias' => $categorias, 'receitas' => $receitas, 'receitasRecentes' => $receitasRecentes]);
+        return view('site.home', ['categorias' => $categorias, 'receitas' => $receitas, 'receitasRecentes' => $receitasRecentes, 'perfil' => $perfil]);
     }
 }

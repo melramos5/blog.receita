@@ -114,4 +114,5 @@ class PostagemController extends Controller
 
         return redirect('postagem')->with('status', 'Postagem excluida com sucesso!');
     }
+
 }

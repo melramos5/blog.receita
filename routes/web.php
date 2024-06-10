@@ -11,7 +11,7 @@ use App\Http\Controllers\ReceitaController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\SalvosController;
 use App\Http\Controllers\ComentarioController;
-use App\Http\Controllers\PublicarController;
+use App\Http\Controllers\PublicacaoController;
 
 
 /*
@@ -45,15 +45,17 @@ Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->
 
 Route::get('/salvos', [App\Http\Controllers\SalvosController::class, 'index'])->name('salvos');
 
-Route::get('/entrar', [App\Http\Controllers\EntrarController::class, 'index'])->name('entrar');
-
-Route::get('/publicar', [App\Http\Controllers\PublicarController::class, 'index'])->name('publicar');
+Route::get('/entrar', [App\Http\Controllers\UserController::class, 'index'])->name('entrar');
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
 
 Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
 
 Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'login'])->name('login_usuario');
+
+Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout_usuario');
+
+Route::post('/cadastrar_usuario', [App\Http\Controllers\UserController::class, 'cadastrar'])->name('cadastrar.usuario');
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
 
@@ -80,7 +82,7 @@ Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'logi
     // DESTROY DELETE
     Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.destroy');
 
-    Route::post('/login_usuario/{id}', [UserController::class, 'login'])->name('login.usuario');
+
 
     // -------------------------------CRUD POSTAGEM ----------------------------------------
 
@@ -108,16 +110,20 @@ Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'logi
     Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('postagem.destroy');
 
 
-    // -------------------------------CRUD PUBLICAR ----------------------------------------
+       // -------------------------------CRUD PUBLICAÇÃO ----------------------------------------
 
-    Route::get('/publicar/create', [PublicarController::class, 'create'])->name('publicar.create');
+    Route::get('/publicar', [App\Http\Controllers\PublicacaoController::class, 'index'])->name('formulario');
 
-    Route::post('/publicar/create', [PublicarController::class, 'store'])->name('publicar.store');
+    Route::get('/publicacao/create', [App\Http\Controllers\PublicacaoController::class, 'create'])->name('publicacao.create');
 
-    Route::get('/publicar/{id}', [PublicarController::class, 'show'])->name('publicar.show');
+    Route::post('/publicacao/create', [App\Http\Controllers\PublicacaoController::class, 'store'])->name('publicacao.store');
 
-    Route::get('/publicar/{id}/edit', [PublicarController::class, 'edit'])->name('publicar.edit');
+    Route::get('/publicacao/{id}', [App\Http\Controllers\PublicacaoController::class, 'show'])->name('publicacao.show');
 
-    Route::put('/publicar/{id}/edit', [PublicarController::class, 'update'])->name('publicar.update');
+    Route::get('/publicacao/{id}/edit', [App\Http\Controllers\PublicacaoController::class, 'edit'])->name('publicacao.edit');
 
-    Route::delete('/publicar/{id}', [PublicarController::class, 'destroy'])->name('publicar.destroy');
+    Route::put('/publicacao/{id}/edit', [App\Http\Controllers\PublicacaoController::class, 'update'])->name('publicacao.update');
+
+    Route::delete('/publicacao/{id}', [App\Http\Controllers\PublicacaoController::class, 'destroy'])->name('publicacao.destroy');
+
+

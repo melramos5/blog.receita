@@ -1,4 +1,4 @@
-@extends('layouts.logado')
+@extends('layouts.app')
 
 @section('content')
 
@@ -32,7 +32,40 @@
                 <br><br>
             </div>
                 <h5>você não publicou nenhuma receita ainda :</h5>
-                  <a href="publicar.html" class="link-secondary"><i class="bi bi-pencil-square"> publicar uma receita</i></a>
+                  <a href="{{ url("/publicar")}}" class="link-secondary"><i class="bi bi-pencil-square"> publicar uma receita</i></a>
+
+
+
+
+
+
+              <ul class="list-group">
+                <li class="list-group-item">
+
+
+                    @foreach ($postagens as $value)
+                    <tr>
+                    <td>{{ $value->categoria->nome }} - </td>
+                    <td>{{ $value->titulo }}</td>
+                    <td><a class="btn btn-primary" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
+                    <td><a class="btn btn-warning" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                    <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">
+
+                            <form method="POST" action="{{ url('/publicacao /' . $value->id) }}">
+                                @csrf
+                                @method('DELETE')
+                              <input type="submit"  class="btn btn-light" value="Excluir">
+                            </form> </a> <br> <hr>
+
+                    </td>
+                    </tr>
+                @endforeach
+
+
+                </li>
+              </ul>
+
+
         </div>
     </section>
 

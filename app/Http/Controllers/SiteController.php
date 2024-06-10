@@ -10,16 +10,18 @@ class SiteController extends Controller
 {
     public function index()
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
-        return view('site.index', ['categorias' => $categorias, 'receitas' => $receitas]);
+        return view('site.index', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
     public function categoria($id)
     {
+        $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::where('categoria_id', $id)->get();
-        return view('site.index', ['categorias' => $categorias,'receitas' => $receitas]);
+        return view('site.index', ['categorias' => $categorias,'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
     public function exibirNome($nome) {
