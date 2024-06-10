@@ -15,7 +15,8 @@ class ComentarioController extends Controller
         $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
-        return view('site.comentarios', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
+        $comentarios = Comentario::where('user_id', $perfil->id)->get();
+        return view('site.comentarios', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'comentarios' => $comentarios]);
     }
 
     public function store(Request $request)

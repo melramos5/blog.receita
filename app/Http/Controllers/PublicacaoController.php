@@ -11,9 +11,10 @@ class PublicacaoController extends Controller
     public function indexUsuario()
     {
         $perfil = auth()->user();
-        $postagens = Postagem::orderBy('id', 'DESC')->get();
+        $postagens = Postagem::orderBy('id', 'DESC')->where('user_id', $perfil->id)->get();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        $receitas = Postagem::get();
+        $receitas = Postagem::where('user_id', $perfil->id)->get();
+        //dd($receitas);
         return view('site.receitaUsuario', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
     }
 
@@ -114,7 +115,11 @@ class PublicacaoController extends Controller
 
         $postagem = Postagem::find($id);
         $postagem->titulo = $request->titulo;
-        $postagem->imagem = base64_encode (file_get_contents ($imagem));
+
+        if($imagem != null){
+            $postagem->imagem = base64_encode (file_get_contents ($imagem));
+        }
+        
         $postagem->ingredientes = $request->ingredientes;
         $postagem->preparo = $request->preparo;
         $postagem->user_id = $user_id;
