@@ -8,6 +8,14 @@ use App\Models\Categoria;
 
 class PublicacaoController extends Controller
 {
+    public function indexUsuario()
+    {
+        $perfil = auth()->user();
+        $postagens = Postagem::orderBy('id', 'DESC')->get();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $receitas = Postagem::get();
+        return view('site.receitaUsuario', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
+    }
 
     public function index()
     {
@@ -61,7 +69,7 @@ class PublicacaoController extends Controller
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
         $postagens = Postagem::orderBy('id', 'DESC')->get();
-        return view('site.perfil', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
+        return view('site.receitausuario', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagens' => $postagens]);
 
     }
 
@@ -113,7 +121,7 @@ class PublicacaoController extends Controller
         $postagem->categoria_id = $request->categoria_id;
         $postagem->save();
 
-        return redirect()->route('perfil');
+        return redirect()->route('receita.usuario');
 
     }
 
@@ -125,7 +133,7 @@ class PublicacaoController extends Controller
         $postagem = Postagem::find($id);
         $postagem->delete();
 
-        return redirect()->route('perfil');
+        return redirect()->route('receita.usuario');
     }
 
 }

@@ -37,13 +37,8 @@
                 <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
             <hr>
                         <div class="mt-2">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    <h5> {!! $postagem->ingredientes !!} </h5>
-                                </label>
-                              </div>
 
+                                    <h5> {!! $postagem->ingredientes !!} </h5>
                         </div>
         </div>
             <hr>

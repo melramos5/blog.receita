@@ -45,6 +45,8 @@ Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->
 
 Route::get('/salvos', [App\Http\Controllers\SalvosController::class, 'index'])->name('salvos');
 
+Route::get('/meuscomentarios', [App\Http\Controllers\ComentarioController::class, 'index'])->name('comentario');
+
 Route::get('/entrar', [App\Http\Controllers\UserController::class, 'index'])->name('entrar');
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
@@ -126,4 +128,5 @@ Route::post('/cadastrar_usuario', [App\Http\Controllers\UserController::class, '
 
     Route::delete('/publicacao/{id}', [App\Http\Controllers\PublicacaoController::class, 'destroy'])->name('publicacao.destroy');
 
+    Route::get('/receitausuario', [App\Http\Controllers\PublicacaoController::class, 'indexUsuario'])->name('receita.usuario');
 
