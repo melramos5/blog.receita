@@ -93,9 +93,15 @@ class PostagemController extends Controller
 
         $imagem = $request->file('imagem');
 
+        //dd($imagem);
+
         $postagem = Postagem::find($id);
         $postagem->titulo = $request->titulo;
-        $postagem->imagem = base64_encode (file_get_contents ($imagem));
+
+        if($imagem != null){
+            $postagem->imagem = base64_encode (file_get_contents ($imagem));
+        }
+
         $postagem->ingredientes = $request->ingredientes;
         $postagem->preparo = $request->preparo;
         $postagem->user_id = $user_id;

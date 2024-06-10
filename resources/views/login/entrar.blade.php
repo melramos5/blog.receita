@@ -50,6 +50,12 @@
                 <h3 class="h3 fw-bolder text-center">LOGIN</h3>
                 <br>
 
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
             <form action="{{ url('login_usuario')}}" method="post">
                 @csrf
                     <div class="mb-3 row">
