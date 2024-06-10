@@ -17,7 +17,6 @@
 </head>
     <body>
 
-
     <!-------------------------------- NAVBAR --------------------------------->
 
 <nav class="navbar navbar-expand-lg" >
@@ -73,126 +72,179 @@
     <!----------------------------------------FOTO------------------------------------->
 
   <div class="foto text-center">
-    <h2 class="titulo text-danger fw-bolder"> FETTUCCINE ALFREDO</h2>
     <div class="container-fluid">
+        <h2 class="titulo text-danger fw-bolder"> FETTUCCINE ALFREDO</h2>
       <br>
         <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" width="700px" height="400px" style="border-radius: 20px; ">
 
-  <div class="icones">
-        <div class="btn-group" >
-          <a href="#" class="btn btn" aria-current="page"><i class='far fa-bookmark' style='color:red;'></i> salvar</a>
-          <a href="#" class="btn btn"><i class='far fa-flag' style='color:red;'></i> denunciar</a>
+        <div class="icones">
+                <div class="btn-group" >
+                <a href="#" class="btn btn" aria-current="page"><i class='far fa-bookmark' style='color:red;'></i> salvar</a>
+                <a href="#" class="btn btn"><i class='far fa-flag' style='color:red;'></i> denunciar</a>
+                </div>
         </div>
-  </div>
     </div>
   </div>
 
 <!-----------------------------------------------ING---------------------------------------->
 
 <div class="conteudo" >
-    <div class="container p-6" >
+    <div class="container-fluid p-6" >
         <div class="row p-4">
              <div class="col-md-12" >
-            <div class="info">
-             <p class="fs-5">O fettuccine tradicional é um prato clássico da culinária italiana, conhecido por sua massa longa e lisa, que combina perfeitamente com uma variedade de molhos e ingredientes.</p>
-             <p class="fs-5">Nessa receita, trouxemos uma opção de fettuccine com creme de leite, mussarela e presunto. Com o processo de preparo descomplicado e acessível, é possível reproduzir este prato clássico em sua própria cozinha, proporcionando momentos de prazer e satisfação à mesa.</p>
-             <p class="fs-5">Surpreenda seus amigos e familiares com esta opção clássica e deliciosa da culinária italiana, e desfrute de momentos especiais em torno deste prato versátil e reconfortante.</p>
-            </div>
-    <br> <br>
-        <div class="ing" >
+            <br> <br>
+                <div class="ing" >
+                    <hr>
+                    <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
+                    <hr>
+                    <div class="mt-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <h5> {!! $postagem->ingredientes !!} </h5>
+                            </label>
+                          </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <hr>
+
+    <!--
+     <div class="ing" >
             <hr>
                 <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
             <hr>
                         <div class="mt-2">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <h5> 300 gramas de massa tipo fettuccine </h5>
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <h5>1 xícara de chá de creme de leite (bem cheia)</h5>
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <h5>2 colheres de sopa de manteiga</h5>
-                            </label>
-                          </div>
-                          <div class="form-check">
-                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                           <label class="form-check-label" for="flexCheckDefault">
-                                <h5>4 colheres de sopa de queijo parmesão ralado</h5>
-                           </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                 <h5> Sal a gosto </h5>
-                            </label>
-                           </div>
-                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                 <h5>Noz-moscada a gosto (opcional) </h5>
-                            </label>
-                           </div>
-                          </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <h5> {!! $postagem->ingredientes !!} </h5>
+                                </label>
+                              </div>
+
                         </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
+        </div>
+            <hr>
+    -->
 
 <!------------------------------------PREP---------------------------->
 
-
-
-<div class="prep" style="border-radius: 20px;">
-    <div class="mt-2">
-      <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
-      <br>
-        <ul>
-            <p class="fs-5" style="color:#490e0d">Numa panela grande, coloque 3 litros de água e 1 colher (sopa) de sal.
-            <br>Leve ao fogo alto.
-            <br>Quando a água ferver, coloque o macarrão e deixe cozinhar conforme as instruções da embalagem;
-            <br>Cuidado para não deixar o macarrão cozinhar demais, ele deve ficar al dente;
-            <br>Enquanto o macarrão cozinha, comece a preparar o molho;
-            <br>Em outra panela, coloque o creme de leite, a manteiga, misture e deixe ferver;
-            <br>Quando ferver, coloque em fogo baixo, mexa por cerca de mais 2 minutos até engrossar um pouco e desligue o fogo;
-            <br>Assim que a massa estiver quase no ponto, ligue o fogo do molho, adicione o queijo ralado, uma pitada de noz-moscada, o sal e mexa bem;
-            <br> Passe a massa cozida para a panela do molho, com o fogo baixo, e vá mexendo delicadamente por cerce de 1 minuto, para que tudo se misture;
-            <br>Agora é só servir. Bom apetite!</p>
-        </ul>
-    </div>
-</div>
-            </div>
+    <div class="prep" style="border-radius: 20px;">
+        <div class="mt-2">
+        <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
+        <br>
+            <ul>
+                <p class="fs-5" style="color:#490e0d">{!! $postagem->preparo !!}</p></p>
+            </ul>
         </div>
     </div>
 </div>
 
+<!--
+<div class="prep" style="border-radius: 20px;">
+    <div class="mt-2">
+      <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
+            <br>
+            <div class="container-fluid">
+            <p>{!! $postagem->preparo !!}</p>
+            </div>
+    </div>
+</div>
+-->
 
 <!--------------------------------COMENTARIO----------------------->
+
 <br>
+
+ <!--
 <section class="comentario">
     <div classs="comentario">
-    <div class="container-fluid">
-     <h6>gostou? deixe um comentario</h6>
-    <div class="form-floating">
+        <div class="container-fluid">
+            <h6>gostou? deixe um comentario</h6>
+            <div class="form-floating">
+                <form method="POST" action="{{ url('/comentario/create') }}">
+                    @csrf
+                    <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+                    <textarea class="form-control" name="conteudo"></textarea><br>
+                    <input type="submit" class="btn btn-warning" value="ENVIAR" style="float: right;">
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" ></textarea>
 
-        <label for="floatingTextarea2">comentario</label>
+    <section class="comentario">
+    <div classs="comentario">
+     <div class="container-fluid">
+        <h6>gostou? deixe um comentario</h6>
+                  <div class="form-floating">
 
-    <br>
-    <button type="button" class="btn btn-warning" style="float: right;">ENVIAR</button>
+                <form method="POST" action="{{ url('/comentario/create') }}">
+                    @csrf
+                    <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+                    <textarea class="form-control" name="conteudo"></textarea><br>
+
+                <input type="submit"  class="btn btn-warning" value="ENVIAR">
+                </form>
+    </div>
+    </div>
+</div>
+</section>
+
+    <br><br>
+<h3>Comentarios:</h3>
+@foreach ($postagem->comentarios as $value)
+    <p>{{ $value->conteudo }}</p>
+    <p>Feito Por: {{ $value->user->name }}</p>
+    <p>Data: {{ $value->created_at }}
+    <br><br>
+-->
+
+
+    <div class="comment">
+        <div class="container-fluid p-6">
+          <div class="row p-6">
+            <div class="col-md-6  mt-4">
+              <div class="com" style="border-radius: 20px;">
+                <div class="mt-2">
+                    <h6>gostou? deixe um comentario</h6>
+                    <div class="form-floating">
+                        <form method="POST" action="{{ url('/comentario/create') }}">
+                            @csrf
+                            <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
+                            <textarea class="form-control" name="conteudo"></textarea><br>
+                            <input type="submit" class="btn btn-warning" value="ENVIAR" style="float: right;">
+                        </form>
+                        <br>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+
+              <div class="col-md-6 p-2 mt-4">
+                <div class="com2" style="border-radius: 20px;">
+                  <div class="mt-2">
+                    <div class="col-md-6" >
+                        <h3>Comentarios:</h3>
+                        @foreach ($postagem->comentarios as $value)
+                            <p>{{ $value->conteudo }}</p>
+                            <p>Feito Por: {{ $value->user->name }}</p>
+                            <p>Data: {{ $value->created_at }}
+                            <br><br>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
-    </div>
-    </section>
+
 
 
 
