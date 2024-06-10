@@ -51,7 +51,7 @@
                     <td><a class="btn btn-warning" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
                     <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">
 
-                            <form method="POST" action="{{ url('/publicacao /' . $value->id) }}">
+                            <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
                                 @csrf
                                 @method('DELETE')
                               <input type="submit"  class="btn btn-light" value="Excluir">
