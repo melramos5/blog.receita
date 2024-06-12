@@ -9,8 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+</script>
+
+<script src="https://kit.fontawesome.com/651d079c52.js" crossorigin="anonymous"></script>
 
    <!----------------------------------------FOTO------------------------------------->
 
@@ -23,16 +27,18 @@
 
         <div class="icones">
             <div class="btn-group" >
-                <a href="#" class="btn btn" aria-current="page"><i class='far fa-bookmark' style='color:red;'></i> salvar</a>
-                <a href="#" class="btn btn"><i class='far fa-flag' style='color:red;'></i> denunciar</a>
+                <a href="#" class="btn btn" aria-current="page"><i class="bi bi-bookmark" style='color:red;'></i> salvar</a>
+                <a href="#" class="btn btn"><i class='bi bi-flag' style='color:red;'></i> denunciar</a>
             </div>
         </div>
     </div>
-  </div>
+
+</div>
+<!-- -fill -->
 
 <!------------------------------ING---------------------------->
 
-        <div class="ing" >
+        <!--  <div class="ing" >
             <hr>
                 <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
             <hr>
@@ -43,7 +49,32 @@
         </div>
             <hr>
 
-<!------------------------PREP------------------------>
+ -->
+
+
+
+<div class="conteudo" >
+    <div class="container-fluid p-6" >
+        <div class="row p-4">
+             <div class="col-md-12" >
+            <br> <br>
+                <div class="ing" >
+                    <hr>
+                    <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
+                    <hr>
+
+                                <h5> {!! $postagem->ingredientes !!} </h5>
+                            </label>
+
+                </div>
+             </div>
+        </div>
+    </div>
+    <hr>
+
+
+
+<!------------------------PREP------------------
 
 
 
@@ -55,8 +86,20 @@
             <p>{!! $postagem->preparo !!}</p>
             </div>
     </div>
-</div>
+</div>------>
 
+
+
+<div class="prep" style="border-radius: 20px;">
+    <div class="mt-2">
+    <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
+    <br>
+        <ul>
+            <p class="fs-5" style="color:#490e0d">{!! $postagem->preparo !!}</p></p>
+        </ul>
+    </div>
+</div>
+</div>
 
 <!-------------------------COMENTARIO----------------------->
 <section class="comentario">
