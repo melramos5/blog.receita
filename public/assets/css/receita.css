@@ -1,61 +1,69 @@
 .navbar{
     background-color: #faead5;
 }
+
 .rodape {
     background-color: #faead5;
-    position: fixed;
-
 }
+
 .comentario {
    padding: 170px;
-
-   width: 900px;
+   width: 50%;
    height: 200px;
    margin-bottom: 70px;
 }
+
 .ing {
     border-radius: 30px;
     margin: 20px auto;
     padding: 60px;
-    width:700px;
-    height:auto;
+    width:80%;
+    height:450px;
     background-color: #fdffb7;
 }
+
 .prep {
     margin: 20px auto;
     padding: 60px;
-    width:900px;
-    height:auto;
-
+    width:90%;
+    height:700px;
 }
+
 .icones {
     margin: auto;
     padding: 20px;
-    width:700px;
+    width:70%;
     height:100px;
 }
+
 .conteudo{
     border-radius: 40px;
     margin: 20px auto;
     padding: 40px;
-    width:1100px;
-    height:auto;
+    width:80%;
+    height:1400px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
 
-}
-h5 {
-    color:#844741;
-}
-.info {
-    margin: 10px ;
-    padding:20px;
-    width:800px;
-    height:400px;
-}
 h2 {
     text-align: center;
+}
+
+a, p, h5, label, button, h4 {
+    font-family: Georgia, serif;
+    color:#490e0d;
+}
+
+h2 {
     color:#490e0d
 }
-a, p, h5, label, button, h4 {
-    color:#490e0d;
+
+.com {
+    width: 50%;
+    height: 400px;
+    margin:auto
+}
+
+.rodape{
+    position:fixed;
 }

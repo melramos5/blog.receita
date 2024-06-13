@@ -1,35 +1,36 @@
 #fundo {
     background: url(https://receitinhas.com.br/wp-content/uploads/2016/12/bruschetta-com-tomate-seco.png);
     background-size: cover;
-  }
+}
 
   .navbar, .rodape {
     background-color: whitesmoke;
-    }
+}
 
- .login{
+.login{
   background-color: whitesmoke;
     border-width: 30px;
     margin: 30px auto;
     padding: 60px;
     width:600px;
     height:600px;
-    border:2px solid #eaad62;
+    border:1px solid #eaad62;
+    border-radius: 30px;
 }
 
 .link{
   float:right
-  }
+}
 
-  .botao {
+.botao {
    float:inherit;
-  }
+}
 
-  .texto {
+.texto {
     font-size: 20px;
-  }
+}
 
-  .recuperar {
+.recuperar {
     background-color: whitesmoke;
     border-width: 30px;
     margin: 30px auto;
@@ -37,7 +38,7 @@
     width:500px;
     height:600px;
     border:2px solid #eaad62;
-  }
+}
 
 
 .cad {
@@ -79,13 +80,13 @@
     border-width: 30px;
     margin: 30px auto;
     padding: 60px;
-    width:700px;
+    width:70%;
     height:600px;
-  }
-  a, p, h5, label, button, h3, h4 {
+}
+
+a, p, h5, label, button, h3, h4 {
     font-family: Georgia, serif;
     color:#490e0d;
 }
-#passwordHelpBlock {
-    font-family: Georgia, serif;
-}
+
+
