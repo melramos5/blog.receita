@@ -10,6 +10,15 @@ use App\Models\Comentario;
 
 class ComentarioController extends Controller
 {
+    public function index()
+    {
+        $perfil = auth()->user();
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $receitas = Postagem::get();
+        $comentarios = Comentario::where('user_id', $perfil->id)->get();
+        return view('site.comentarios', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'comentarios' => $comentarios]);
+    }
+
     public function store(Request $request)
     {
         //dd($request->all());

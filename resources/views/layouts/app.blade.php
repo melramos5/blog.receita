@@ -13,7 +13,7 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title>MELANE massa</title>
+    <title>MELANE</title>
 </head>
 <body>
     <div id="fundo">
@@ -40,19 +40,56 @@
           </ul>
         </div>
 
-        <form class="d-flex">
+        @guest
+
+   <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
           <i class="bi bi-search btn btn-danger me-2" style="border-radius: 20px;"></i>
         </form>
           <a href="{{ url("/entrar")}}" class="btn btn-danger me-2" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
       </div>
+
+@else
+
+
+<form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
+    <i class="bi bi-search btn btn-danger me-2" style="border-radius: 20px;"></i>
+  </form>
+
+<div class="dropdown">
+      <a href="perfil3.html" class="btn btn me-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+         <img src="{{ url("/assets/imagens/perfil.png")}}" width="25" >
+
+         {!! $perfil->name !!}
+
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #FBF7F1;">
+        <li><a class="dropdown-item" href="{{ url("/perfil")}}"><i class="bi bi-person"> perfil</i></a></li>
+        <li><a class="dropdown-item" href="{{ url("/salvos")}}"><i class="bi bi-bookmark"> salvos</i></a></li>
+        <li><a class="dropdown-item" href="{{ url("/publicar")}}"><i class="bi bi-pencil-square"> publicar</i></a></li>
+        <li><a class="dropdown-item" href="perfil2.html"><i class="bi bi-pencil"> editar perfil</i></a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="{{ url("/logout")}}"><i class="bi bi-box-arrow-right"> sair</i></a></li>
+      </ul>
+  </div>
+    <button class="hamburguer navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <i class="bi bi-list"></i>
+  </button>
+  </div>
+
+
+@endguest
+
+
     </nav>
 
 
         <!-------------------------------- FOOTER --------------------------------->
 
     <br><br>
-
+<footer>
         <div class="container">
             @yield('content')
         </div>
@@ -101,6 +138,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
         </script>
+
+</footer>
 
     </body>
     </html>

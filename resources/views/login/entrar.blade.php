@@ -14,7 +14,7 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title>MELANE log</title>
+    <title>MELANE</title>
 </head>
 <body>
     <div id="fundo">
@@ -49,6 +49,12 @@
                 <hr>
                 <h3 class="h3 fw-bolder text-center">LOGIN</h3>
                 <br>
+
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
             <form action="{{ url('login_usuario')}}" method="post">
                 @csrf

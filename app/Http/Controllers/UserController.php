@@ -6,12 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+
+    public function index()
+    {
+        return view('login.entrar');
+    }
+
+
 
      public function login(Request $request)
     {
@@ -24,28 +33,43 @@ class UserController extends Controller
             dd('Não Existe');
         }
 
-        //dd($user_exist);
         $user = User::where('email', $request->email)->first();
 
         if (Hash::check($request->password, $user->password)){
             Auth::login($user);
-            //redirecionar dashboard
-            //dd(auth()->user());
+
             return redirect('/')->with('/');
 
-
-
         }else{
-            //redirecionar para tela anterior mostrando mensagem login ou senha invalida
+
             return redirect('entrar')->with('status', 'erro');
         }
     }
 
 
-    public function index()
-    {
-        //
+        public function logout(Request $request): RedirectResponse {
+
+            Auth::logout();
+            $request->session()->invalidate();
+
+            return redirect('/');
     }
+
+    public function cadastrar(Request $request){
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password=Hash::make($request->password);
+             //dd($request);
+        $user->save();
+
+
+        return redirect('/entrar')->with('status', 'USUÁRIO CADASTRADO COM SUCESSO');
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -95,3 +119,4 @@ class UserController extends Controller
         //
     }
 }
+
