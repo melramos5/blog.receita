@@ -97,7 +97,7 @@
     </div>
 </div>
 
-    <!----------------------- RECEITAS------------------------------------------------->
+    <!----------------------- RECEITAS-----------------------------------------
 
 <section class="receitas" style="background-color: #FBF7F1;">
     <div class="container " >
@@ -114,50 +114,38 @@
                     <p class="fw-light"></p>
                 </div>
             </div>
-            <div class="col-md-4 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">gurjão de frango</h4>
-                    <p class="fw-light"></p>
-                  </div>
+
+        </div>
+    </div>
+</section>
+-------->
+
+<section class="receitas" style="background-color: #fbf7f1;">
+    <div class="container " >
+      <div class="row ">
+        <div class="col-12">
+            <h2 class="fw-bold mt-3 text-center">Receitas Populares</h2>
+        </div>
+      </div>
+
+        <div class="row card-grup row-cols-3 p-1">
+
+            @foreach($receitas as $value)
+
+            <div class="col-4 p-4 mt-1">
+                <a class="navbar-brand" href="{{ url("/receita/" . $value->id)}}">
+                    <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
+                    <div class="mt-2">
+                        <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
+                        <p class="fw-light"></p>
+                    </div>
             </div>
-            <div class="col-md-4 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">filé de frango </h4>
-                    <p class="fw-light"></p>
-                </div>
-            </div>
-            <div class="col-md-4 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">palha italiana </h4>
-                    <p class="fw-light"></p>
-                </div>
-            </div>
-            <div class="col-md-4 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">cookie </h4>
-                    <p class="fw-light"></p>
-                </div>
-            </div>
-            <div class="col-md-4 p-3 mt-3">
-                <a href="../receitas/fettuccine.html">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/07758ee08f7e16a0b15b0d98a56d204a_XL.jpg" class="img-fluid" alt="">
-                </a>
-                <div class="mt-2">
-                     <a href="../receitas/fettuccine.html" class="btn btn">
-                       <h4 class="fs-5"> fettuccine alfredo </h4>
-                    </a>
-                    <p class="fw-light"></p>
-                </div>
-              </div>
+            @endforeach
         </div>
     </div>
 </section>
 
-    <!--------------------------NOVIDADE ---------------------------->
+    <!--------------------------NOVIDADE -------------------
 
 <section class="receitas" >
     <div class="container p-6">
@@ -170,70 +158,39 @@
             <div class="col-md-3 p-3 mt-3">
                 <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
                 <div class="mt-2">
-                    <h4 class="fs-5">bife à cavalo</h4>
-                    <p class="fw-light"></p>
-                </div>
-              </div>
-              <div class="col-md-3 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-                <div class="mt-2">
                     <h4 class="fs-5">torta de ouro branco</h4>
                     <p class="fw-light"></p>
-
                 </div>
+             </div>
+        </div>
+    </div>
+</section>
+--------->
+
+<section class="receitas" >
+    <div class="container p-6">
+      <div class="row ">
+        <div class="col-12">
+            <h2 class="fw-bold mt-2 text-center">Adicionadas Recentemente </h2>
+        </div>
+    </div>
+        <div class="row p-3">
+
+          @foreach($receitasRecentes as $value)
+
+           <div class="col-md-3 p-3 mt-3">
+                <a class="navbar-brand" href="{{ url("/receita/" . $value->id)}}">
+                    <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
+                    <div class="mt-2">
+                        <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
+                        <p class="fw-light"></p>
+
+                    </div>
             </div>
-              <div class="col-md-3 p-3 mt-3">
-                  <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-                  <div class="mt-2">
-                      <h4 class="fs-5">carne de sol </h4>
-                      <p class="fw-light"></p>
-
-                  </div>
-              </div>
-              <div class="col-md-3 p-3 mt-3">
-                  <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-                  <div class="mt-2">
-                      <h4 class="fs-5">salada caesar </h4>
-                      <p class="fw-light"></p>
-
-                  </div>
-              </div>
-
-              <div class="col-md-3 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">frango com quiabo </h4>
-                    <p class="fw-light"></p>
-
-                </div>
-            </div>
-            <div class="col-md-3 p-3 mt-3">
-              <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-              <div class="mt-2">
-                  <h4 class="fs-5">frango assado com batata </h4>
-                  <p class="fw-light"></p>
-
-              </div>
-          </div>
-            <div class="col-md-3 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">bolo de milho com fubá</h4>
-                    <p class="fw-light"></p>
-
-                </div>
-            </div>
-            <div class="col-md-3 p-3 mt-3">
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a6e4d9622a775d7eed800918154a7577_XL.jpg" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h4 class="fs-5">camarão frito</h4>
-                    <p class="fw-light"></p>
-
-                </div>
-            </div>
-            </div>
-      </div>
-  </section>
+          @endforeach
+        </div>
+  </div>
+</section>
 
     <!--------------------------- FOOTER---------------------------------------------->
 

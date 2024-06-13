@@ -5,6 +5,8 @@
 
 .rodape {
     background-color: #faead5;
+    position: fixed;
+
 }
 
 
@@ -74,7 +76,6 @@ h2 {
 
 
 a, p, h5, label, button, h4 {
-    font-family: Georgia, serif;
     color:#490e0d;
 }
 
