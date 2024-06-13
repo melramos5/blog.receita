@@ -12,23 +12,21 @@
                     @csrf
                     @foreach ($postagens as $value)
 
-            <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
+                    <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
 
-                    @csrf
-                    @method('DELETE')
-                <input type="submit"  class="btn btn-danger" value="Excluir">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit"  class="btn btn-danger" value="Excluir">
 
-                    <tr>
-                    <td>{{ $value->categoria->nome }} - </td>
-                    <td>{{ $value->titulo }}</td>
-                    <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
-                    <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
-
-            </form>
+                        <tr>
+                            <td>{{ $value->categoria->nome }} - </td>
+                            <td>{{ $value->titulo }}</td>
+                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
+                        </tr>
+                    </form>
         <br><hr >
 
-                    </td>
-                    </tr>
                 @endforeach
                 </li>
             </ul>

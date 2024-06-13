@@ -4,31 +4,32 @@
 
 <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receitausuario.css")}}" />
 
-<div class=botao>
-    <div class="mt-2">
-<ul class="list-group">
+    <div class=botao>
+        <div class="mt-2">
+            <ul class="list-group">
+                <li class="list-group-item">
 
-    <li class="list-group-item">
-        @csrf
-        @foreach ($comentarios as $value)
- <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
-        @csrf
-        @method('DELETE')
-    <input type="submit"  class="btn btn-danger" value="Excluir">
-        <tr>
-        <td>{{ $value->conteudo }} - </td>
-        <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
-        <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                    @csrf
+                    @foreach ($comentarios as $value)
 
-                </form> </a> <br> <hr>
+                    <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
 
-        </td>
-        </tr>
-    @endforeach
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit"  class="btn btn-danger" value="Excluir">
 
+                        <tr>
+                            <td>{{ $value->conteudo }} - </td>
+                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
+                        </tr>
+                    </form>
+                    <br> <hr>
 
-    </li>
-  </ul>
-</div>
-</div>
+        @endforeach
+
+                </li>
+             </ul>
+         </div>
+    </div>
 @endsection
