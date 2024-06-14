@@ -53,11 +53,13 @@ Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'
 
 Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
 
-Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'login'])->name('login_usuario');
+Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'login'])->name('login.usuario');
 
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout_usuario');
 
 Route::post('/cadastrar_usuario', [App\Http\Controllers\UserController::class, 'cadastrar'])->name('cadastrar.usuario');
+
+Route::get('/recuperarsenha', [App\Http\Controllers\RecuperarController::class, 'index'])->name('recuperar.senha');
 
     // -------------------------------CRUD CATEGORIA ----------------------------------------
 

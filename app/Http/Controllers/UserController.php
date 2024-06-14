@@ -28,7 +28,7 @@ class UserController extends Controller
         $user_exist = User::where('email', $request->email)->exists();
 
         if (! $user_exist){
-            return redirect('entrar')->with('status', 'erro');
+            return redirect('entrar')->with('status', 'Usuario ou Senha Incorretos');
 
             dd('Não Existe');
         }
@@ -42,7 +42,7 @@ class UserController extends Controller
 
         }else{
 
-            return redirect('entrar')->with('status', 'erro');
+            return redirect('entrar')->with('status', 'Usuario ou Senha Incorretos');
         }
     }
 

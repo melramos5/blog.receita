@@ -84,10 +84,6 @@
     height:600px;
   }
 
-.rodape {
-    position: fixed;
-}
-
 a, p, h5, label, button, h3, h4 {
     font-family: Georgia, serif;
     color:#490e0d;

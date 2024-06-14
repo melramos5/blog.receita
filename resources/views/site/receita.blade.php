@@ -6,16 +6,6 @@
 
 <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receita.css")}}" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
-</script>
-
-<script src="https://kit.fontawesome.com/651d079c52.js" crossorigin="anonymous"></script>
-
    <!--FOTO-->
 
 <div class="foto text-center">
@@ -25,12 +15,19 @@
       <img src="data:image/png;base64,{!! $postagem->imagem !!}" class="img-fluid" width="700px" height="400px" style="border-radius: 20px;">
         <p class="pub"{!! $postagem->user->name !!}></p>
 
-        <div class="icones">
+<!-- APENSA PESSOAS LOGADAS PODEM INTERAGIR -->
+        @guest
+        @else
+
+               <div class="icones">
             <div class="btn-group" >
                 <a href="#" class="btn btn" aria-current="page"><i class="bi bi-bookmark" style='color:red;'></i> salvar</a>
                 <a href="#" class="btn btn"><i class='bi bi-flag' style='color:red;'></i> denunciar</a>
             </div>
         </div>
+        @endguest
+
+
     </div>
 </div>
 <!-- -fill = preenchido  -->
@@ -66,7 +63,11 @@
     </div>
 </div>
 
+
 <!--COMENTAR-->
+<!-- APENSA PESSOAS LOGADAS PODEM COMENTAR -->
+@guest
+@else
 
 <div class="comment">
     <div class="container-fluid p-6">
@@ -87,6 +88,15 @@
                 </div>
               </div>
             </div>
+        </div>
+    </div>
+</div>
+
+@endguest
+
+
+
+
 
 
 <!--COMENTARIOS-->

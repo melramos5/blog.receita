@@ -13,6 +13,7 @@
 </head>
 <body>
     <div id="fundo">
+
     <!-------------------------------- NAVBAR --------------------------------->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
@@ -28,6 +29,8 @@
             </li>
           </ul>
         </div>
+
+
         @guest
    <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
@@ -35,6 +38,8 @@
         </form>
           <a href="{{ url("/entrar")}}" class="btn btn-danger me-2" style="border-radius: 20px;"><i class="bi bi-person-fill"><span> entrar</span></i></a>
       </div>
+
+
 @else
 <form class="d-flex">
     <input class="form-control me-2" type="search" placeholder="pesquisar receita" aria-label="Search" style="border-radius: 20px;">
@@ -60,6 +65,8 @@
   </div>
 @endguest
     </nav>
+
+
         <!-------------------------------- FOOTER --------------------------------->
 
     <br><br>

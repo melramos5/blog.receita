@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receitausuario.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{ url("/assets/css/comentario.css")}}" />
 
     <div class=botao>
         <div class="mt-2">

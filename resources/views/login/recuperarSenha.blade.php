@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/loggin.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{ url("/assets/css/loggin.css")}}"/>
 
 
     <!-- Bootstrap CSS -->
@@ -14,13 +14,13 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title>MELANE</title>
+    <title>MELANE rec</title>
 </head>
 <body>
     <div id="fundo">
 
     <!-------------------------------- NAVBAR --------------------------------->
-    <nav class="navbar navbar-expand-lg " >
+    <nav class="navbar navbar-expand-lg" >
         <div class="container" >
             <a class="navbar-brand" href="{{ url("/")}}">
                 <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
@@ -38,55 +38,31 @@
     <!----------------------- CONTEUDO------------------------------------------------->
 
 
-    <div class="login" >
+    <div class="recuperar " >
         <div class="container p-4" >
             <div class="row ">
+
                 <div class="user text-center">
                     <img src="{{ url("/assets/imagens/logo.png")}}" width="100">
                 </div>
-
-                <div class="col-md-12" >
-                <hr>
-                <h3 class="h3 fw-bolder text-center">LOGIN</h3>
                 <br>
-
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-            <form action="{{ url('login_usuario')}}" method="post">
-                @csrf
-                    <div class="mb-3 row">
-                        <label for="exampleFormControlInput1" class=" col-sm-2 col-form-label" style="border-radius: 20px;">Email</label>
-                        <div class="col-sm-10">
-                        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com" style="border-radius: 20px;">
-                      </div>
-                    </div>
-
-                      <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
-                        <div class="col-sm-10">
-                          <input name="password" type="password" class="form-control" id="inputPassword" placeholder="senha" style="border-radius: 20px;">
-                        </div>
-                      </div>
-
-
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="LOGIN">Login</button>
-                </form>
-
-
-                    </div>
+                <div class="col-md-12" >
                     <br>
-                      <div class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Lembrar de mim</label>
-                        <a href="{{ url("recuperarsenha")}}" class="link link-primary"><br>Esqueci minha senha</a>
+                    <p class="texto fw-bolder text-black">Insira seu e-mail e enviaremos um código
+                      para redefinirmos sua senha </p>
+                <hr>
+                    <div class="mb-3 row">
+
+                        <label for="exampleFormControlInput1" class=" col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com" style="border-radius: 20px;">
                       </div>
-                      <hr>
-                      <p class="cadastro text-center">Não tem uma conta? <a href="cadastro" class="link-danger"><br>Cadastre-se</a></p>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a href="cod_senha.html" class="btn btn-warning" type="button" style="border-radius: 20px;">ENVIAR</a>
+                  </div>
+
+                      <br>
 
                 </div>
             </div>
@@ -103,7 +79,7 @@
             <div class="row p-4">
               <div class="col-md-3 mt-3">
                 <a class="navbar-brand" href="{{ url("/")}}">
-                  <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
+                    <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
                 </a>
                 <p></p>
               </div>
@@ -135,6 +111,7 @@
             </div>
           </div>
     </footer>
+
 
 </div>
 
