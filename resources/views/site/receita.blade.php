@@ -91,53 +91,7 @@
 
 <!--COMENTARIOS-->
 
-            <div class="col-md-6 p-2 mt-4">
-                <div class="com2" style="border-radius: 20px;">
-                  <div class="mt-2">
-                    <div class="col-md-6" >
-                        <h3>Comentarios:</h3>
-                        @foreach ($postagem->comentarios as $value)
-                            <p>{{ $value->conteudo }}</p>
-                            <p>Feito Por: {{ $value->user->name }}</p>
-                            <p>Data: {{ $value->created_at }}
-                            <br><br>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-    @endforeach
-
-@endsection
-
-
-
-
-<!--
-
-<section class="comentario">
-    <div classs="comentario">
-    <div class="container-fluid">
-    <h6>Gostou? Deixe um Comentario!</h6>
-                  <div class="form-floating">
-
-                <form method="POST" action="{{ url('/comentario/create') }}">
-                    @csrf
-                    <input type="hidden" id="custId" name="postagem_id" value="{{ $postagem->id }}">
-                    <textarea class="form-control" name="conteudo"></textarea><br>
-
-                <input type="submit"  class="btn btn-warning" value="ENVIAR">
-                </form>
-
-    </div>
-    </div>
-</div>
-</section>
-
-    <br><br>
 <h3>Comentarios:</h3>
 @foreach ($postagem->comentarios as $value)
     <p>{{ $value->conteudo }}</p>
@@ -147,5 +101,5 @@
 
 @endforeach
 
-    @endsection
--->
+@endsection
+

@@ -7,10 +7,11 @@
 }
 
 .comentario {
-   padding: 170px;
-   width: 50%;
-   height: 200px;
-   margin-bottom: 70px;
+    margin-top: 10px;
+    padding: 170px;
+    width: 50%;
+    height: 200px;
+    margin-bottom: 70px;
 }
 
 .ing {
@@ -18,7 +19,7 @@
     margin: 20px auto;
     padding: 60px;
     width:80%;
-    height:450px;
+    height:auto;
     background-color: #fdffb7;
 }
 
@@ -41,7 +42,8 @@
     margin: 20px auto;
     padding: 40px;
     width:80%;
-    height:1400px;
+    height:auto;
+    overflow:visible;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
@@ -55,15 +57,13 @@ a, p, h5, label, button, h4 {
 }
 
 h2 {
-    color:#490e0d
+    color:#490e0d;
 }
 
 .com {
     width: 50%;
     height: 400px;
-    margin:auto
+    margin:auto;
 }
 
-.rodape{
-    position:fixed;
-}
+
