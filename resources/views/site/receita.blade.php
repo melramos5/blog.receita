@@ -19,7 +19,7 @@
     <div class="container-fluid">
       <br>
       <img src="data:image/png;base64,{!! $postagem->imagem !!}"width="700px" height="400px" style="border-radius: 20px;">
-        <p class="pub"{!! $postagem->user->name !!}></p>
+        <p class="pub">{!! $postagem->user->name !!}</p>
 
         <div class="icones">
             <div class="btn-group" >
