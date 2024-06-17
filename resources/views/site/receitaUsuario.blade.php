@@ -2,32 +2,34 @@
 
 @section('content')
 
+<link rel="stylesheet" type="text/css" href="{{ url("/assets/css/receitausuario.css")}}" />
 
+    <div class=botao>
+        <div class="mt-2">
+            <ul class="list-group">
+                <li class="list-group-item">
 
-<ul class="list-group">
-    <li class="list-group-item">
-
-
-        @foreach ($postagens as $value)
-        <tr>
-        <td>{{ $value->categoria->nome }} - </td>
-        <td>{{ $value->titulo }}</td>
-        <td><a class="btn btn-primary" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
-        <td><a class="btn btn-warning" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
-        <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">
-
-                <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
                     @csrf
-                    @method('DELETE')
-                  <input type="submit"  class="btn btn-light" value="Excluir">
-                </form> </a> <br> <hr>
+                    @foreach ($postagens as $value)
 
-        </td>
-        </tr>
-    @endforeach
+                    <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
 
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit"  class="btn btn-danger" value="Excluir">
 
-    </li>
-  </ul>
+                        <tr>
+                            <td>{{ $value->categoria->nome }} - </td>
+                            <td>{{ $value->titulo }}</td>
+                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
+                        </tr>
+                    </form>
+        <br><hr >
 
+                @endforeach
+                </li>
+            </ul>
+        </div>
+    </div>
 @endsection

@@ -13,7 +13,7 @@ class SiteController extends Controller
         $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
-        return view('site.index', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
+        return view('site.categoria', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
     public function categoria($id)
@@ -21,7 +21,7 @@ class SiteController extends Controller
         $perfil = auth()->user();
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::where('categoria_id', $id)->get();
-        return view('site.index', ['categorias' => $categorias,'receitas' => $receitas, 'perfil' => $perfil]);
+        return view('site.categoria', ['categorias' => $categorias,'receitas' => $receitas, 'perfil' => $perfil]);
     }
 
     public function exibirNome($nome) {
@@ -29,6 +29,6 @@ class SiteController extends Controller
         $categoria = Categoria::findOrFail($nome);
 
         // Passa a categoria para a view
-        return view('site.index', compact('categoria'));
+        return view('site.categoria', compact('categoria'));
     }
 }

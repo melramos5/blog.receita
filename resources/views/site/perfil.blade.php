@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row p-5 align-items-center" >
                 <div class="col-md-12" >
-                    <img src="{{ url("/assets/imagens/perfil.png")}}" width="170">
+                    <img src="{{ url("/assets/imagens/perfil.png")}}" class="img-fluid" width="170">
                 </div>
                 <div class="col-md-12" >
                     <h2 class="text-danger fw-bold ms-3 py-3">{!! $perfil->name !!}</h2>

@@ -44,12 +44,14 @@ class PublicacaoController extends Controller
             'titulo.required' => 'O campo :attribute é obrigatório!',
             'ingredientes.required' => 'O campo :attribute é obrigatório!',
             'preparo.required' => 'O campo :attribute é obrigatório!',
+            'imagem.required' => 'O campo :attribute é obrigatório!',
         ];
 
         $validated = $request->validate([
             'titulo' => 'required|min:5',
             'ingredientes' => 'required|min:5',
             'preparo' => 'required|min:5',
+            'imagem' => 'required',
         ], $messages);
 
 
@@ -119,7 +121,7 @@ class PublicacaoController extends Controller
         if($imagem != null){
             $postagem->imagem = base64_encode (file_get_contents ($imagem));
         }
-        
+
         $postagem->ingredientes = $request->ingredientes;
         $postagem->preparo = $request->preparo;
         $postagem->user_id = $user_id;

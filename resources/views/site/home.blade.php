@@ -3,7 +3,7 @@
 @section('content')
 
 
-<!----------------------------------CARROSSEL--------------------------------->
+<!--CARROSSEL-->
 
 <div class="container text-center py-5 ">
   <div id="carouselExampleIndicators" class="carousel slide">
@@ -26,11 +26,11 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://p2.trrsf.com/image/fget/cf/942/530/images.terra.com/2023/03/31/602302592-tamanho-padrao-gc-64.jpg"  height="500" class="d-block w-100" alt="" style="border-radius: 20px;">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Torta de Limão</h5>
+            <img src="https://www.sabornamesa.com.br/media/k2/items/cache/fdc5bcdd10a8fa7a628dc01912c2a729_XL.jpg"  height="500" class="d-block w-100" alt="" style="border-radius: 20px;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>cheesecake de morango</h5>
+            </div>
           </div>
-        </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -43,69 +43,61 @@
     </div>
   </div>
 
-    <!----------------------- RECEITAS POPULARES------------------------------------------------->
+    <!-- RECEITAS POPULARES -->
 
-      <section class="receitas" style="background-color: #faead5;">
+
+    <section class="receitas" style="background-color: #fbf7f1;">
         <div class="container " >
           <div class="row ">
             <div class="col-12">
                 <h2 class="fw-bold mt-3 text-center">Receitas Populares</h2>
             </div>
-        </div>
+          </div>
 
-
-        <div class="row card-grup row-cols-3 p-1">
+            <div class="row card-grup row-cols-3 p-1">
 
                 @foreach($receitas as $value)
-
 
                 <div class="col-4 p-4 mt-1">
                     <a class="navbar-brand" href="{{ url("/receita/" . $value->id)}}">
                         <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
-
-                            <div class="mt-2">
-                                <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
-                                <p class="fw-light"></p>
-
-                            </div>
+                        <div class="mt-2">
+                            <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
+                            <p class="fw-light"></p>
+                        </div>
                 </div>
                 @endforeach
-
             </div>
+        </div>
+    </section>
 
 
-    <!--------------------------NOVIDADE ---------------------------->
+    <!--NOVIDADE -->
 
     <section class="receitas" >
-      <div class="container p-6">
-        <div class="row ">
-          <div class="col-12">
-              <h2 class="fw-bold mt-2 text-center">Adicionadas Recentemente </h2>
-          </div>
-      </div>
-
-
+        <div class="container p-6">
+          <div class="row ">
+            <div class="col-12">
+                <h2 class="fw-bold mt-2 text-center">Adicionadas Recentemente </h2>
+            </div>
+        </div>
             <div class="row p-3">
 
-            @foreach($receitasRecentes as $value)
+              @foreach($receitasRecentes as $value)
 
-             <div class="col-md-3 p-3 mt-3">
+               <div class="col-md-3 p-3 mt-3">
                     <a class="navbar-brand" href="{{ url("/receita/" . $value->id)}}">
                         <img src="data:image/png;base64,{{ $value->imagem ?? ''}}" class="img-fluid" alt="" width="300" height="100" style="border-radius: 20px;"> </a>
+                        <div class="mt-2">
+                            <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
+                            <p class="fw-light"></p>
 
-                            <div class="mt-2">  
-                                <h4 class="fs-5 text-center">{{ $value->titulo }}</h4>
-                                <p class="fw-light"></p>
-
-                            </div>
+                        </div>
                 </div>
-                @endforeach
-
+              @endforeach
             </div>
-
-
-    </div>
-  </section>
+      </div>
+    </section>
 
 
 @endsection
