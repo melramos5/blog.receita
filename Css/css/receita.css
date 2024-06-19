@@ -1,8 +1,9 @@
 .navbar{
     background-color: #faead5;
 }
-.rodape {
+footer {
     background-color: #faead5;
+    margin:auto
 }
 .comentario {
    padding: 170px;

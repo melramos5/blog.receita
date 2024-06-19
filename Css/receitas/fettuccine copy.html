@@ -18,8 +18,7 @@
     <body>
 
     <!-- NAVBAR -->
-
-<nav class="navbar navbar-expand-lg" >
+<nav class="navbar navbar-expand-lg fixed-top" >
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url("/inicio")}}">
             <img src="{{ url("/assets/imagens/logo.png")}}" alt="" width="170" height="70">
@@ -88,7 +87,7 @@
 
 <!-----------------------------------------------ING---------------------------------------->
 
-<div class="conteudo" >
+<!-- <div class="conteudo" >
     <div class="container-fluid p-6" >
         <div class="row p-4">
              <div class="col-md-12" >
@@ -106,7 +105,7 @@
     </div>
     <hr>
 
-    <!--
+
      <div class="ing" >
             <hr>
                 <h2 class="h3 fw-bolder text-center" style="color:#5d3934">INGREDIENTES</h2>
@@ -125,7 +124,7 @@
     -->
 
 <!------------------------------------PREP---------------------------->
-
+<!--
     <div class="prep" style="border-radius: 20px;">
         <div class="mt-2">
         <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
@@ -137,7 +136,7 @@
     </div>
 </div>
 
-<!--
+
 <div class="prep" style="border-radius: 20px;">
     <div class="mt-2">
       <h2 class="fs-3 fw-bolder text-center" style="color:#5d3934">MODO DE PREPARO</h2>
@@ -151,7 +150,7 @@
 
 <!--------------------------------COMENTARIO----------------------->
 
-<br>
+
 
  <!--
 <section class="comentario">
@@ -197,7 +196,7 @@
     <p>Feito Por: {{ $value->user->name }}</p>
     <p>Data: {{ $value->created_at }}
     <br><br>
--->
+
 
 
     <div class="comment">
@@ -240,14 +239,14 @@
     </div>
 
 
-
+-->
 
 <!---------------------------------- FOOTER------------------------------------->
 
 <footer class="rodape">
     <div class="container">
         <div class="row p-4">
-          <div class="col-md-3 mt-3">
+          <div class="col-md-3 mt-auto py-3 ">
             <a class="navbar-brand" href="#">
               <img src="../img/logo.png" alt="" width="170" height="70">
             </a>
